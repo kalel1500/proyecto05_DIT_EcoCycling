@@ -3,7 +3,7 @@
 	.text_centrado{
 		text-align: center;
 		width: 20%;
-		height: 20%;
+		height: 23%;
 		margin-top: 20%;
 		margin-left: 40%;
 	}
@@ -60,6 +60,9 @@ body{
 					?>
 					</div>
 					<input class="btn" type="submit" name="submit">
+					<br>
+					<a href="registro.php">Registrarse</a>
 					</div>
 				</form>
+				
 			

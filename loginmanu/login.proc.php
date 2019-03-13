@@ -1,14 +1,14 @@
 <?php
 
-//include 'conection.php';
+include 'conection.php';
 session_start();
 $user = $_POST['user'];
 $pass = $_POST['pass'];
-$encriptada=md5($pass);
+//$encriptada=md5($pass);
 
 
 
-$q = "";
+$q = "SELECT * FROM tbl_usuario WHERE (usuario_usuario='$user' OR usuario_email='$user') AND usuario_contrasena='$pass'";
 $q_usuarios = mysqli_query($link, $q);
 
 
