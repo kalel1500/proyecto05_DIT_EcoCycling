@@ -4,11 +4,11 @@
 	</div>
 						
 	<div class="centrarTitulo">
-		<?php include "assets/php/proc/tituloCabezera.proc.php"; ?>
+		<?php //include "assets/php/proc/tituloCabezera.proc.php"; ?>
 	</div>
 </header>
 					
-<?php include "php/navegador.php"; ?>
+<?php //include "assets/php/proc/navegador.proc.php"; ?>
 
 <section>
 	<?php
@@ -17,8 +17,8 @@
 		} else {
 			$mostrar = $_REQUEST['mostrar'];
 			switch ($mostrar) {
-				case 'pagina1':
-					include "assets/php/pagina1.php";
+				case 'datos':
+					include "assets/php/datos.php";
 					break;
 				case 'pagina2':
 					include "assets/php/pagina2.php";

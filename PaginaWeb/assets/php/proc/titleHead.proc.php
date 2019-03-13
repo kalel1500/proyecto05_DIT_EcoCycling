@@ -1,24 +1,41 @@
 <?php
-	if (isset($_REQUEST['mostrar'])) {
-		$mostrar=$_REQUEST['mostrar'];
-		switch ($mostrar) {
-			case 'recursos':
-				echo "<title>Recursos</title>";
-				break;
-			case 'reservas':
-				echo "<title>Reservas</title>";
-				break;
-			case 'incidencias':
-				echo "<title>Incidencias</title>";
-				break;
-			case 'formularioValidacion':
-				echo "<title>Validacion</title>";
-				break;
-			default:
-				echo "<title>MyContacts</title>";
-				break;
+
+	if (!isset($_SESSION['user_id'])) {
+		if (isset($_REQUEST['mostrar'])) {
+			$mostrar=$_REQUEST['mostrar'];
+			switch ($mostrar) {
+				case 'login':
+					echo "<title>Inicia sesion</title>";
+					break;
+				case 'singup':
+					echo "<title>Registrate</title>";
+					break;
+				default:
+					echo "<title>EcoCycling</title>";
+					break;
+			}
+		} else {
+			echo "<title>Inicia sesion</title>";
 		}
+
 	} else {
-		echo "<title>Recursos</title>";
+
+		if (isset($_REQUEST['mostrar'])) {
+			$mostrar=$_REQUEST['mostrar'];
+			switch ($mostrar) {
+				case 'datos':
+					echo "<title>Mis datos</title>";
+					break;
+				case 'tops':
+					echo "<title>Tops</title>";
+					break;
+				default:
+					echo "<title>EcoCycling</title>";
+					break;
+			}
+		} else {
+			echo "<title>Mis datos</title>";
+		}
 	}
+		
 ?>
