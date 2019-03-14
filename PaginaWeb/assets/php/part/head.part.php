@@ -20,7 +20,7 @@
 
 		<!-- includes -->
 		<?php include "assets/php/proc/conexion.proc.php"; ?>
-		<?php //include "assets/php/proc/datosUsuario.proc.php"; ?>
-		<?php //include "assets/php/proc/titleHead.proc.php"; ?>
+		<?php include "assets/php/proc/datosUsuario.proc.php"; ?>
+		<?php include "assets/php/proc/titleHead.proc.php"; ?>
 	</head>
 	<body>

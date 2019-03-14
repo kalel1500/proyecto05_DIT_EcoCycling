@@ -1,0 +1,8 @@
+body {
+	margin-top: 51px;
+}
+.form-control[disabled] {
+    background-color: whitesmoke;
+    border: none;
+    cursor: default;
+}

@@ -16,7 +16,7 @@
 				<li><a href="index.php?mostrar=tops">Tops</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li id="li-link-nombre-usuario"></li>
+				<li id="li-link-nombre-usuario"><a href="index.php?mostrar=perfil&id=1">NombreUsu</a></li>
 				<li><a href="index.php?mostrar=logout"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>
 			</ul>
 		</div>
