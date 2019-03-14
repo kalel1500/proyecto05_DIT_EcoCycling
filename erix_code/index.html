@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <script src="assets/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="assets/js/indexFunctions.js" charset="utf-8"></script>
+    <style media="screen">
+      .display {
+        display: block;
+      }
+
+      .non_display {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="displayerModal" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Area usuarios</button>
+
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div id="modalContent" class="modal-content">
+          <div class="pagModal">
+        </div>
+        <div class="pagModal non_display"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
