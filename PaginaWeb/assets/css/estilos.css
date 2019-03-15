@@ -6,3 +6,14 @@ body {
     border: none;
     cursor: default;
 }
+
+.pading-input-group {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
+/*añadir a bootstrap*/
+.center-block, .text-center {
+    float: none;
+}
+

@@ -1,69 +1,27 @@
-<article>
+
+<article class="container">
 	<form class="form-horizontal col-sm-7 center-block" name="form_mod_perfil" id="id-form-perfil">
 		
-		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp1_cambiar_foto">Foto</label>
-			<div class="col-sm-8">
-				<label class="radio-inline">
-					<input type="radio" name="inp_cambiar_foto" id="inp1_cambiar_foto" value="dejar" checked> Dejar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="inp_cambiar_foto" id="inp2_cambiar_foto" value="cambiar"> Cambiar
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="inp_cambiar_foto" id="inp3_cambiar_foto" value="quitar"> Quitar
-				</label>
-			</div>
-		</div>
 
-		<div class="form-group" style="display: none;" id="group_subir-foto">
-			<label class="col-sm-4 control-label" for="inp_subirFoto">Seleccionar archivo</label>
-			<div class="col-sm-8">
-				<input class="form-control" type="file" id="inp_subirFoto" name="inp_subirFoto" disabled value="default_user" title="Deshabilitado por falta de tiempo">
-			</div>
-		</div>
-		
 		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_usuario">Usuario</label>
+			<label class="col-sm-4 control-label" for="inp_usuario">Usuario:</label>
 			<div class="col-sm-8">
-				<input class="form-control" type="text" id="inp_usuario" name="inp_usuario" value="<?php echo $_SESSION['usuario_usuario']; ?>">
+				<input class="form-control" type="text" id="inp_usuario" name="inp_usuario" value="">
 				<span class="help-block">Este nombre sera mostrado a los usuarios, ocultando el verdadero nombre.</span>
 			</div>
 		</div>
 		
 		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_nombre1">Nombre 1</label>
+			<label class="col-sm-4 control-label" for="inp_nombre">Nombre:</label>
 			<div class="col-sm-8">
-				<input class="form-control" type="text" id="inp_nombre1" name="inp_nombre1" value="<?php echo $_SESSION['nombre1_usuario']; ?>">
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_nombre2">Nombre 2</label>
-			<div class="col-sm-8">
-				<input class="form-control" type="text" id="inp_nombre2" name="inp_nombre2" value="<?php echo $_SESSION['nombre2_usuario']; ?>">
+				<input class="form-control" type="text" id="inp_nombre" name="inp_nombre" value="">
 			</div>
 		</div>
 		
 		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_apellido1">Apellido 1</label>
+			<label class="col-sm-4 control-label" for="inp_apellido">Apellido:</label>
 			<div class="col-sm-8">
-				<input class="form-control" type="text" id="inp_apellido1" name="inp_apellido1" value="<?php echo $_SESSION['apellido1_usuario']; ?>">
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_apellido2">Apellido 2</label>
-			<div class="col-sm-8">
-				<input class="form-control" type="text" id="inp_apellido2" name="inp_apellido2" value="<?php echo $_SESSION['apellido2_usuario']; ?>">
-			</div>
-		</div>
-		
-		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_telefono">Teléfono</label>
-			<div class="input-group col-sm-8 pading-input-group">
-				<span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-				<input class="form-control" type="text" id="inp_telefono" name="inp_telefono" value="<?php echo $_SESSION['telefono_usuario']; ?>">
+				<input class="form-control" type="text" id="inp_apellido" name="inp_apellido" value="">
 			</div>
 		</div>
 		
@@ -71,22 +29,15 @@
 			<label class="col-sm-4 control-label" for="inp_correo">Correo electrónico</label>
 			<div class="input-group col-sm-8 pading-input-group">
 				<span class="input-group-addon">@</span>
-				<input class="form-control" type="text" id="inp_correo" name="inp_correo" value="<?php echo $_SESSION['email_usuario']; ?>">
+				<input class="form-control" type="text" id="inp_correo" name="inp_correo" value="">
 			</div>
 		</div>
-		
-		<!-- <div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_informacion">Mas información</label>
-			<div class="col-sm-8">
-				<textarea class="form-control" rows="4" id="inp_informacion" name="inp_informacion" maxlength="130"><?php /*echo*/ $_SESSION/*'comentario_usuario'*/; ?></textarea>
-			</div>
-		</div> -->
 		
 		<div class="form-group">
 			<label class="col-sm-4 control-label" for="inp1_sexo">Sexo</label>
 			<div class="col-sm-8">
 				<?php
-				if ($_SESSION['sexo_usuario'] == 'Hombre') {
+				if (/*$_SESSION['sexo_usuario'] == 'Hombre'*/true) {
 					?>
 					<label class="radio-inline">
 						<input type="radio" name="inp_sexo" id="inp1_sexo" value="Hombre" checked> Hombre
@@ -107,7 +58,7 @@
 						<input type="radio" name="inp_sexo" id="inp2_sexo" value="Mujer" checked> Mujer
 					</label>
 					<label class="radio-inline">
-						<input type="radio" name="inp_sexo" id="inp3_sexo" value="Otros"> Otros
+						<input type="radio" name="inp_sexo" id="inp3_sexo" value="Mujer"> Otros
 					</label>
 					<?php
 				} else if($_SESSION['sexo_usuario'] == 'Otros') {
@@ -140,10 +91,37 @@
 		</div>
 
 		<div class="form-group">
+			<label class="col-sm-4 control-label" for="inp_grupo">Grupo:</label>
+			<div class="col-sm-8">
+				<select class="form-control" id="inp_grupo" name="inp_grupo">
+					<option value="">-Selecciona-</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="inp_nivel">Nivel:</label>
+			<div class="col-sm-8">
+				<select class="form-control" id="inp_nivel" name="inp_nivel">
+					<option value="">-Selecciona-</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="inp_foto">Foto:</label>
+			<div class="col-sm-8">
+				<select class="form-control" id="inp_foto" name="inp_foto">
+					<option value="">-Selecciona-</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
 			<label class="col-sm-4 control-label" for="inp_reset_pass">Cambiar contraseña</label>
 			<div class="col-sm-8">
 				<label class="checkbox-inline">
-					<input type="checkbox" id="inp_reset_pass" name="inp_reset_pass" value="si"> Cambiar contraseña
+					<input type="checkbox" id="inp_reset_pass" name="inp_reset_pass" value=""> Cambiar contraseña
 				</label>
 			</div>
 		</div>

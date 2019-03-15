@@ -28,22 +28,23 @@ USE `bd_proyecto_5`;
 
 DROP TABLE IF EXISTS `tbl_usuario`;
 CREATE TABLE IF NOT EXISTS `tbl_usuario` (
-	`usuario_id`			int(11)									NOT NULL		AUTO_INCREMENT	COMMENT 'pk_usuario',
-	`usuario_usuario`		varchar(255)	COLLATE utf8_unicode_ci	NOT NULL											,
-	`usuario_nombre`		varchar(255)	COLLATE utf8_unicode_ci	DEFAULT NULL										,
-	`usuario_apellido`		varchar(255)	COLLATE utf8_unicode_ci	DEFAULT NULL										,
-	`usuario_email`			varchar(255)	COLLATE utf8_unicode_ci	NOT NULL											,
-	`usuario_contrasena`	varchar(255)	COLLATE utf8_unicode_ci	DEFAULT NULL										,
-	`usuario_ultimaConexion`decimal(11,1)							DEFAULT NULL										,
-	`usuario_ultimoReset`	decimal(11,1)							DEFAULT NULL										,
-	`usuario_fondos`		decimal(5,2)							DEFAULT NULL										,
-	`grupo_id`				int(11) 								DEFAULT NULL					COMMENT 'fk_grupo'	,
-	`nivel_id`				int(11) 								DEFAULT NULL					COMMENT 'fk_nivel'	,
-	`foto_id`				int(11) 								DEFAULT NULL					COMMENT 'fk_foto'	,
-	PRIMARY KEY	`pk_usuario_id`		(`usuario_id`)																		,
-	UNIQUE KEY	`uk_usuario_usuario`(`usuario_usuario`)																	,
+	`usuario_id`			int(11)														NOT NULL		AUTO_INCREMENT	COMMENT 'pk_usuario',
+	`usuario_usuario`		varchar(255)						COLLATE utf8_unicode_ci	NOT NULL											,
+	`usuario_nombre`		varchar(255)						COLLATE utf8_unicode_ci	DEFAULT NULL										,
+	`usuario_apellido`		varchar(255)						COLLATE utf8_unicode_ci	DEFAULT NULL										,
+	`usuario_email`			varchar(255)						COLLATE utf8_unicode_ci	NOT NULL											,
+	`usuario_contrasena`	varchar(255)						COLLATE utf8_unicode_ci	DEFAULT NULL										,
+	`usuario_sexo`			enum('Hombre', 'Mujer', 'Otros')	COLLATE utf8_unicode_ci	DEFAULT NULL										,
+	`usuario_ultimaConexion`decimal(11,1)						COLLATE utf8_unicode_ci	DEFAULT NULL										,
+	`usuario_ultimoReset`	decimal(11,1)												DEFAULT NULL										,
+	`usuario_fondos`		decimal(5,2)												DEFAULT NULL										,
+	`grupo_id`				int(11) 													DEFAULT NULL					COMMENT 'fk_grupo'	,
+	`nivel_id`				int(11) 													DEFAULT NULL					COMMENT 'fk_nivel'	,
+	`foto_id`				int(11) 													DEFAULT NULL					COMMENT 'fk_foto'	,
+	PRIMARY KEY	`pk_usuario_id`		(`usuario_id`)																							,
+	UNIQUE KEY	`uk_usuario_usuario`(`usuario_usuario`)																						,
 	UNIQUE KEY	`uk_usuario_email`	(`usuario_email`)
-) ENGINE=InnoDB								DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	 							;
+) ENGINE=InnoDB													DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci	 							;
 
 -- --------------------------------------------------------
 -- Estructura de tabla para la tabla `tbl_grupo`
@@ -230,25 +231,25 @@ INSERT INTO `tbl_foto` (`foto_ruta`,`foto_nombre`,`foto_extension`,`nivel_id`) V
 
 
 -- TRUNCATE TABLE `tbl_usuario`;
-INSERT INTO `tbl_usuario` (`usuario_usuario`,`usuario_nombre`,`usuario_apellido`,`usuario_email`,`usuario_contrasena`,`usuario_ultimaConexion`,`usuario_ultimoReset`,`usuario_fondos`,`grupo_id`,`nivel_id`,`foto_id`) VALUES
-('usuAdmin',		'Admin',		'Empresa',		'admin@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Administrador"),		(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usuSuperAdmin',	'SuperAdmin',	'Empresa',		'superAdmin@gmail.com',	NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "SuperAdministrador"),	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu01',			'Stefan',		'Salvatore',	'usu01@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu02',			'Damon',		'Salvatore',	'usu02@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu03',			'Elena',		'Gilbert',		'usu03@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu04',			'Jeremy',		'Gilbert',		'usu04@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu05',			'Bonnie',		'Bennett',		'usu05@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu06',			'Caroline',		'Forbes',		'usu06@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu07',			'Matt',			'Donovan',		'usu07@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu08',			'Tyler',		'Lockwood',		'usu08@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu09',			'Alaric',		'Saltzman',		'usu09@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu10',			'Katherine',	'Pierce',		'usu10@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu11',			'Kai',			'Parker',		'usu11@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu12',			'Niklaus',		'Mikaelson',	'usu12@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu13',			'Elijah',		'Mikaelson',	'usu13@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu14',			'Rebekah ',		'Mikaelson',	'usu14@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu15',			'Cole',			'Mikaelson',	'usu15@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu16',			'Fin',			'Mikaelson',	'usu16@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
-('usu17',			'Freya',		'Mikaelson',	'usu17@gmail.com',		NULL,	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01"));
+INSERT INTO `tbl_usuario` (`usuario_usuario`,`usuario_nombre`,`usuario_apellido`,`usuario_email`,`usuario_contrasena`,`usuario_sexo`,`usuario_ultimaConexion`,`usuario_ultimoReset`,`usuario_fondos`,`grupo_id`,`nivel_id`,`foto_id`) VALUES
+('usuAdmin',		'Admin',		'Empresa',		'admin@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Administrador"),		(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usuSuperAdmin',	'SuperAdmin',	'Empresa',		'superAdmin@gmail.com',	NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "SuperAdministrador"),	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu01',			'Stefan',		'Salvatore',	'usu01@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu02',			'Damon',		'Salvatore',	'usu02@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu03',			'Elena',		'Gilbert',		'usu03@gmail.com',		NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu04',			'Jeremy',		'Gilbert',		'usu04@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu05',			'Bonnie',		'Bennett',		'usu05@gmail.com',		NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu06',			'Caroline',		'Forbes',		'usu06@gmail.com',		NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu07',			'Matt',			'Donovan',		'usu07@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu08',			'Tyler',		'Lockwood',		'usu08@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu09',			'Alaric',		'Saltzman',		'usu09@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu10',			'Katherine',	'Pierce',		'usu10@gmail.com',		NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu11',			'Kai',			'Parker',		'usu11@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu12',			'Niklaus',		'Mikaelson',	'usu12@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu13',			'Elijah',		'Mikaelson',	'usu13@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu14',			'Rebekah ',		'Mikaelson',	'usu14@gmail.com',		NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu15',			'Cole',			'Mikaelson',	'usu15@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu16',			'Fin',			'Mikaelson',	'usu16@gmail.com',		NULL,	'Hombre',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01")),
+('usu17',			'Freya',		'Mikaelson',	'usu17@gmail.com',		NULL,	'Mujer',	'1552204800',	NULL,	0,	(SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = "Usuario"),				(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01"),	(SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = "1_foto01"));
 UPDATE `tbl_usuario` SET `usuario_contrasena` = '$2y$10$BhHdy5dTii3ESp3tCLGazOJmwntxEWac8kIyMlNGNpwdr5NMhs1jq';
 

@@ -1,5 +1,6 @@
 
 <?php
+	session_start();
 	
 	include "assets/php/part/head.part.php";
 
