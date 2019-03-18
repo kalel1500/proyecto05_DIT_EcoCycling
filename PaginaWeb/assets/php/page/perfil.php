@@ -7,7 +7,6 @@
 			<label class="col-sm-4 control-label" for="inp_usuario">Usuario:</label>
 			<div class="col-sm-8">
 				<input class="form-control" type="text" id="inp_usuario" name="inp_usuario" value="">
-				<span class="help-block">Este nombre sera mostrado a los usuarios, ocultando el verdadero nombre.</span>
 			</div>
 		</div>
 		
@@ -89,16 +88,7 @@
 				?>
 			</div>
 		</div>
-
-		<div class="form-group">
-			<label class="col-sm-4 control-label" for="inp_grupo">Grupo:</label>
-			<div class="col-sm-8">
-				<select class="form-control" id="inp_grupo" name="inp_grupo">
-					<option value="">-Selecciona-</option>
-				</select>
-			</div>
-		</div>
-
+		
 		<div class="form-group">
 			<label class="col-sm-4 control-label" for="inp_nivel">Nivel:</label>
 			<div class="col-sm-8">
