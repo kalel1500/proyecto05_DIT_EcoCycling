@@ -1,0 +1,152 @@
+﻿@font-face
+{
+   font-family: "Biko_Regular";
+  src: url("Biko_Regular.otf");
+        
+}
+html, body {
+margin: 0; padding: 0;
+ font-family:"Biko_Regular";
+}
+.imagen{
+    height: 150px;
+}
+.imagen2{
+    height: 32.5px;
+}
+.imagen:hover {-webkit-transform: rotate(360deg); /* Rotacion */
+-moz-transform: rotate(360deg);
+transform: rotate(360deg);
+transition:all 1.7s ease-out; /* Tiempo que tarda en girar */
+-moz-transition: all 1.7s;
+-webkit-transition: all 1.7s;
+-o-transition: all 1.7s;
+
+}
+
+
+
+#myFooter {
+    background-color: white;
+    color: white;
+        -webkit-box-shadow: 0px -10px 41px 3px rgba(0,0,0,0.09);
+-moz-box-shadow: 0px -10px 41px 3px rgba(0,0,0,0.09);
+box-shadow: 0px -10px 41px 3px rgba(0,0,0,0.09);
+}
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #88c33d;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: #6b9e2a;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #88c33d;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+    text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .google:hover {
+    color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: #88c33d;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
