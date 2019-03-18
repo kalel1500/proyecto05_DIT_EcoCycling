@@ -8,12 +8,12 @@
 	background-color: white;
 	position: absolute; /*(o relative, según tu diseño)*/
 	top: 0px;
-	height: 85px;
+	height: 65px;
 	width: 100%;
 }
 .navegacion{
 background-color: #f6f6f6;
-margin-top: 85px;
+margin-top: 65px;
 height: 25px;
 width: 100%;
 -webkit-box-shadow: 0px 10px 41px 3px rgba(0,0,0,0.09);
@@ -53,10 +53,7 @@ margin: 0; padding: 0;
 display:block;
 margin:auto;
 }
-.icons img{
-	height: 35px !important;
 
-}
 .imagen{
 	height: 70%;
 	margin-left: 10%;
