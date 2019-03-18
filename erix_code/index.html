@@ -8,6 +8,7 @@
     <script src="assets/js/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js" charset="utf-8"></script>
     <script src="assets/js/indexFunctions.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style media="screen">
       .display {
         display: block;
@@ -16,6 +17,38 @@
       .non_display {
         display: none;
       }
+      input:focus,select:focus,textarea:focus,button:focus {
+        outline: none;
+      }
+
+      textarea:focus,
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      input[type="datetime"]:focus,
+      input[type="datetime-local"]:focus,
+      input[type="date"]:focus,
+      input[type="month"]:focus,
+      input[type="time"]:focus,
+      input[type="week"]:focus,
+      input[type="number"]:focus,
+      input[type="email"]:focus,
+      input[type="url"]:focus,
+      input[type="search"]:focus,
+      input[type="tel"]:focus,
+      input[type="color"]:focus,
+      .uneditable-input:focus {
+        border-color: rgba(126, 239, 104, 0.8);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+        outline: 0 none;
+      }
+
+      input[type="text"],
+      input[type="password"]
+       {
+        border: none;
+        border-bottom: 2px solid lightgreen;
+      }
+
     </style>
   </head>
   <body>

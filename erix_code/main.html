@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/css/footer.css">
+	 	<link href="assets/css/header.css" rel="stylesheet" type="text/css"/>
+	 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.ajax({
+					method: "GET",
+					url: "assets/php/json/sessionCheck.json.php",
+				})
+				.done( function(response) {
+					if (response) {
+						alert("Nada");
+					} else {
+						window.location.replace("index.html");
+					}
+				});
+			});
+		</script>
+
+		<div class="header">
+			<img class="imagen" src="assets/img/logohead.png">
+			<nav id="menu">
+				<ul>
+	 				<li><a href="#"><img  src="assets/img/idioma.png" height="35px"><br>Español<i class="fas fa-caret-down"></i></a>
+		    			<ul>
+		      				<li><a href="#">Inglés</a></li>
+		      				<li><a href="#">Alemán</a></li>
+					    </ul>
+	  				</li>
+					<li><a href="#"><img src="assets/img/points.png" height="35px"><br><font color="#88c33d">0 EcoPoints</font></a></li>
+	  				<li><a href="#"><div class="icons" align="center"><img src="assets/img/perfil.png"><br>Perfil<i class="fas fa-caret-down"></i></div></a>
+	    				<ul>
+								<li><a href="#">Mi cuenta</a></li>
+								<li><a href="#">Cerrar Sesión</a></li>
+							</ul>
+	  				</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="navegacion">
+			<a href="#" ><img class="iconav" src="assets/img/home.png"></a>
+			<a href="#">Home</a>
+			<a href="#"><img class="iconav2" src="assets/img/ranking.png"></a>
+			<a href="#">Ranking</a>
+			<a href="#"><img class="iconav2" src="assets/img/donaciones.png"></a>
+			<a href="#">Donaciones</a>
+
+		</div>
+		<div class="content">
+		</div>
+		    <footer id="myFooter">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-sm-3">
+		                    <h2 class="logo"><a href="#"> <img class="imagen0" src="assets/img/logo.png"></a></h2>
+		                   <a href="#"> <img class="imagen2" src="assets/img/logo2.png"></a>
+
+		                </div>
+
+		                <div class="col-sm-2">
+		                    <h5>SOBRE NOSOTROS</h5>
+		                    <ul>
+		                        <li><a href="#">ECOCycling</a></li>
+		                        <li><a href="#">Puntos de información</a></li>
+		                        <li><a href="#">Servicio Técnico</a></li>
+		                    </ul>
+		                </div>
+		                <div class="col-sm-2">
+		                    <h5>MI CUENTA</h5>
+		                    <ul>
+		                        <li><a href="#">Perfil</a></li>
+		                        <li><a href="#">+ECOPoints</a></li>
+		                    </ul>
+		                </div>
+		                <div class="col-sm-2">
+		                    <h5>LEGAL</h5>
+		                    <ul>
+		                        <li><a href="#">Aviso Legal</a></li>
+		                        <li><a href="#">Política de Cookies</a></li>
+		                        <li><a href="#">Condiciones</a></li>
+		                    </ul>
+		                </div>
+		                <div class="col-sm-3">
+		                    <div class="social-networks">
+		                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+		                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+		                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+		                    </div>
+		                    <button type="button" class="btn btn-default">Contacto</button>
+		                </div>
+		            </div>
+		        </div>
+
+		    </footer>
+
+	</body>
+</html>
