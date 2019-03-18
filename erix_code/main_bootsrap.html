@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		
+		<!--Librerias bootstrap-->
+		<script src="assets/js/jquery-3.3.1.min.js" charset="utf-8"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- Estilos propios -->
+		<link href="assets/css/estilos.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/navegador.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/footer.css" rel="stylesheet" type="text/css"/>
+
+		<!-- Js propios -->
+
+
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.ajax({
+					method: "GET",
+					url: "assets/php/json/sessionCheck.json.php",
+				})
+				.done( function(response) {
+					if (response) {
+					} else {
+						window.location.replace("index.html");
+					}
+				});
+			});
+		</script>
+
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header" >
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span> 
+						</button>
+
+						<a class="navbar-brand  minav-caja-logo" href="index.php"><img class="navbar-img" src="assets/img/isologoHead.png"></a>
+						
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.php?mostrar=datos"><i class="fas fa-home"></i> Home</a></li>
+							<li><a href="index.php?mostrar=tops"><i class="fas fa-medal"></i> Ranking</a></li>
+							<li><a href="index.php?mostrar=tops"><i class="fas fa-hand-holding-usd"></i> Donaciones</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li id="li-link-nombre-usuario"><a href="index.php?mostrar=perfil&id=1"><i class="fas fa-user"></i> NombreUsu</a></li>
+							<li><a href="index.php?mostrar=logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+
+		<div class="content">
+			<p>contenido</p>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+
+				<div class="row" id="#rowFooter">
+					<div class="col-sm-4 text-center">
+						<div class="col-sm-12">
+							<a href="#"><img class="img-isotipo-footer" src="assets/img/isotipoFooter.png"></a> <!-- isotipo es la imagen -->
+						</div>
+						<div class="col-sm-12">
+							<a href="#"><img class="img-logotipo-footer" src="assets/img/logotipoFooter.png"></a> <!-- logotipo son las letras -->
+						</div>
+					</div>
+
+					<div class="col-sm-4 text-center vertical-align">
+						<p class="text-muted">texto de relleno</p>
+					</div>
+
+					<div class="col-sm-4 text-center vertical-align">
+						<div class="div-social-networks">
+							<a href="#" class="a-icon-socialNetworks twitter"><i class="fa fa-twitter"></i></a>
+							<a href="#" class="a-icon-socialNetworks facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="a-icon-socialNetworks google"><i class="fa fa-google-plus"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</footer>
+
+	</body>
+</html>
