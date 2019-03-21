@@ -11,7 +11,7 @@
 				?>
 			</div>
 		</div>
-	</article>			
+	</article>
 </section>
 
 <?php include "assets/php/footer.php" ?>		
