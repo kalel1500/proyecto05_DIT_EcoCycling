@@ -27,6 +27,7 @@
 		<script type="text/javascript" src="assets/js/indexFunctions.js" ></script>
 		<!-- <script type="text/javascript" src="assets/js/perfil_display_inputs.js"></script> -->
 		<script type="text/javascript" src="assets/js/ajax_perfil.js"></script>
+		<script type="text/javascript" src="assets/js/aumentar.js"></script>
 
 		<!-- conexion -->
 		<?php
