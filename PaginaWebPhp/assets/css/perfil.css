@@ -1,0 +1,35 @@
+.form-control[disabled] {
+	/*background-color: whitesmoke;*/
+	background-color: white;
+	border: none;
+	box-shadow: none;
+	cursor: default;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+input[disabled] {
+	cursor: default !important;
+}
+
+.inp-disabled {
+	cursor: default;
+}
+
+.pading-input-group {
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+}
+
+#id-form-perfil {
+	background-color: #cacaca;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+/*añadir a bootstrap*/
+.center-block, .text-center {
+	float: none;
+}

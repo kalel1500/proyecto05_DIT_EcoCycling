@@ -18,16 +18,17 @@ function login_CheckData ($send_identifier,$send_pwd) {
   function login_CheckDatabase($send_identifier,$send_pwd) {
       global $con;
 
-      $data = $con ->prepare('SELECT usuario_contrasena,usuario_id FROM tbl_usuario WHERE usuario_email = ? OR usuario_usuario = ?');
+      $data = $con ->prepare('SELECT usuario_contrasena,usuario_id,usuario_usuario FROM tbl_usuario WHERE usuario_email = ? OR usuario_usuario = ?');
       $data->bind_param('ss', $send_identifier,$send_identifier);
       $data->execute();
       $data->store_result();
       if ($data->num_rows == 1) {
-        $data->bind_result($result,$id);
+        $data->bind_result($result,$id,$user);
         while ($row = $data->fetch()) {
             if (password_verify($send_pwd,$result)) {
               session_start();
               $_SESSION['ecocycling_user_id'] = $id;
+              $_SESSION['ecocycling_user_user'] = $user;
               header("Location: ../../main.html");
             }
         }

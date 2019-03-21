@@ -1,0 +1,93 @@
+/*----------------- steaky footer -------------------*/
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	/*height: 60px;*/
+	/*background-color: #f5f5f5;*/
+	background-color: white;
+	/*background-color: red;*/
+	box-shadow: rgba(0, 0, 0, 0.09) 0px -10px 41px 3px;
+	padding: 15px;
+}
+body > .container {
+	padding: 60px 15px 0;
+}
+
+
+.footer > .container {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+code {
+	font-size: 80%;
+}
+/*----------------- FIN steaky footer -------------------*/
+
+
+
+.img-isotipo-footer{ /*isotipo es la imagen*/
+	height: 100px;
+}
+.img-logotipo-footer{ /*logotipo son las letras*/
+	/*height: 32.5px;*/
+	height: 25px;
+}
+/*.img-isotipo-footer:hover {-webkit-transform: rotate(360deg); /* Rotacion ****
+	-moz-transform: rotate(360deg);
+	transform: rotate(360deg);
+	transition:all 1.7s ease-out; /* Tiempo que tarda en girar ****
+	-moz-transition: all 1.7s;
+	-webkit-transition: all 1.7s;
+	-o-transition: all 1.7s;
+}*/
+
+
+.a-icon-socialNetworks {
+	font-size: 32px;
+	color: #88c33d;
+	padding: 10px;
+	transition: 0.2s;
+}
+
+.twitter:hover {
+	color: #00aced;
+}
+.facebook:hover {
+	color: #0077e2;
+}
+.google:hover {
+	color: #ef1a1a;
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+	.margin-top {
+		margin-top: 5%;
+	}
+	#rowFooter > div {
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+}
+
+@media (min-width: 1000px) {
+	#rowFooter {
+		display: flex;
+		align-items: center;
+	}
+}
+	

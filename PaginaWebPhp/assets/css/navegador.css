@@ -1,0 +1,39 @@
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #88c33d;
+    background-color: transparent;
+}
+
+.navbar-default {
+    background-color: white;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #e2ffbd !important;
+}
+
+.navbar {
+    font-size: 16px;
+    transition: 0.2;
+}
+
+.navbar-img {
+	width: 150px;
+    display: inline-flex !important;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 9px 10px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+
+.iconav{
+	height: 75%;
+	padding-left: 11%;
+	margin-top: 3px;
+	margin-bottom: 0px;
+}

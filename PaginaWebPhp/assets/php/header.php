@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ranking - EcoCycling</title>
+		<link rel="icon" type="image/png" href="assets/img/isotipoFooter.png"/>
 
 		<!-- Font awesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -19,9 +21,20 @@
 		<link href="assets/css/estilos.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/navegador.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/footer.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/perfil.css" rel="stylesheet" type="text/css" >
 
 		<!-- Js propios -->
+		<script type="text/javascript" src="assets/js/indexFunctions.js" ></script>
+		<!-- <script type="text/javascript" src="assets/js/perfil_display_inputs.js"></script> -->
+		<script type="text/javascript" src="assets/js/ajax_perfil.js"></script>
 
+		<!-- conexion -->
+		<?php
+			include "assets/php/conexion.php";
+			if (!isset($_SESSION['ecocycling_user_id'])) {
+				header("Location: login.php");
+			}
+		?>
 
 	</head>
 	<body>
@@ -56,67 +69,19 @@
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href=""><i class="fas fa-home"></i> Home</a></li>
-							<li class=""><a href=""><i class="fas fa-medal"></i> Ranking</a></li>
-							<li class=""><a href=""><i class="fas fa-hand-holding-usd"></i> Donaciones</a></li>
+							<?php
+								$ruta = pathinfo($_SERVER["REQUEST_URI"]);
+							?>
+							
+							<li class="<?php echo ($ruta['filename'] == "home") ? "active" : ""; ?>"><a href="home.php"><i class="fas fa-home"></i> Home</a></li>
+							<li class="<?php echo ($ruta['filename'] == "ranking") ? "active" : ""; ?>"><a href="ranking.php"><i class="fas fa-medal"></i> Ranking</a></li>
+							<li class="<?php echo ($ruta['filename'] == "donations") ? "active" : ""; ?>"><a href="donations.php"><i class="fas fa-hand-holding-usd"></i> Donaciones</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li id="li-link-nombre-usuario"><a href=""><i class="fas fa-user"></i> NombreUsu</a></li>
-							<li><a href=""><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
+							<li class="<?php echo ($ruta['filename'] == "perfil") ? "active" : ""; ?>" id="li-link-nombre-usuario"><?php echo "<a href=\"perfil.php?id=$_SESSION[ecocycling_user_id]\">"?><i class="fas fa-user"></i> Perfil</a></li>
+							<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</header>
-
-
-		<section>
-			<article class="container">
-				<div class="row">
-					<h1>NombreUsu</h1>
-					<div class="col-md-12 info-container">
-						
-					</div>
-				</div>
-			</article>			
-		</section>
-
-		<footer class="footer">
-			<div class="container">
-
-				<div class="row text-center" id="rowFooter">
-					<div class="col-md-2">
-						<div class="col-md-12">
-							<a href=""><img class="img-isotipo-footer" src="assets/img/isotipoFooter.png" id="rotar"></a> <!-- isotipo es la imagen -->
-						</div>
-						<div class="col-md-12">
-							<a href=""><img class="img-logotipo-footer" src="assets/img/logotipoFooter.png"></a> <!-- logotipo son las letras -->
-						</div>
-					</div>
-
-					<div class="col-md-8">
-						<p class="text-muted">Dani Alvarez | Manuel Carceller | Erix Mamani | Adrian Canals | Alejandro Reñones</p>
-						<p class="text-muted">© 1996-2019, EcoCycling.com, Inc. o afiliados. Todos los derechos reservados.</p>
-					</div>
-
-					<div class="col-md-2">
-						<a href="#" class="a-icon-socialNetworks twitter"><i class="fa fa-twitter"></i></a>
-						<a href="#" class="a-icon-socialNetworks facebook"><i class="fa fa-facebook"></i></a>
-						<a href="#" class="a-icon-socialNetworks google"><i class="fa fa-google-plus"></i></a>
-					</div>
-				</div>
-			</div>
-
-		</footer>
-		<script type="text/javascript">
-			$("#rotar").mouseenter(function(){
-					$(this).rotate(
-						{
-							angle: 0, 
-							animateTo:360
-						});
-				}
-			);
-		</script>
-	</body>
-</html>
