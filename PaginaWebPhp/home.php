@@ -41,7 +41,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-3">Foto usuario:</div>
-							<div class="col-md-3"><?php echo $array['foto_ruta'].$array['foto_nombre'].$array['foto_extension']; ?></div>
+							<div class="col-md-3"><?php echo "<img src=\"".$array['foto_ruta'].$array['foto_nombre'].$array['foto_extension']."\" style=\"width: 100px;\">"; ?></div>
 						</div>
 						<div class="row">
 							<div class="col-md-3">Kilometros mensuales:</div>
