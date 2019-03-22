@@ -26,7 +26,8 @@
 					?>
 					<h1><?php echo $array['usuario_usuario']; ?></h1>
 								
-					<div class="col-md-12 info-container">							
+					<div class="col-md-12 info-container">
+						<?php include "assets/php/barra_progreso.php" ?>
 						<div class="row">
 							<div class="col-md-3">Numero nivel:</div>
 							<div class="col-md-3"><?php echo $array['nivel_numero']; ?></div>
