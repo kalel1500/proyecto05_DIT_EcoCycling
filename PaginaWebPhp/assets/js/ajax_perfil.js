@@ -8,7 +8,7 @@ function iniciarVariables_camposPerfil() {
 	pass_conf = document.getElementById('group_conf_new_pas');
 
 }
-	
+
 function mostrarOcultar_camposPerfil() {
 	if(check_pass.checked) {
 		pass.style.display = 'initial';
@@ -22,14 +22,14 @@ function mostrarOcultar_camposPerfil() {
 function escuachar_camposPerfil() {
 	iniciarVariables_camposPerfil();
 	check_pass.addEventListener("click", mostrarOcultar_camposPerfil);
-	
+
 }
 
 
 window.addEventListener("load", escuachar_camposPerfil);
 
-function disable_inputs(){ 
-	$("input").prop('disabled', true);
+function disable_inputs(){
+	$(".perfil").prop('disabled', true);
 	$("select").prop('disabled', true);
 	$('#group_change_pas').hide();
 	$(".radio-inline").addClass("inp-disabled");
@@ -49,7 +49,7 @@ function disable_inputs(){
 	$("input").removeAttr('style');
 }
 
-function enable_inputs(){ 
+function enable_inputs(){
 	$("input").prop('disabled', false);
 	$("select").prop('disabled', false);
 	$('#group_change_pas').show();
@@ -59,7 +59,7 @@ function enable_inputs(){
 	$("#modidy-button").hide();
 }
 
-function ajax_fotos(){ 
+function ajax_fotos(){
 	// 2.- llamamos al ajax que nos deuelve la lista de fotos
 	$.ajax({
 		method: "POST",
@@ -74,7 +74,7 @@ function ajax_fotos(){
 					output += `
 						<option value="${value['foto_id']}">${value['foto_nombre']}</option>
 					`;
-					
+
 				});
 
 				//Actualizamos el HTML del elemento con id="#div-opciones-foto"
@@ -95,14 +95,14 @@ function ajax_fotos(){
 	});
 }
 
-function ajax_mostrarUsuario(){ 
+function ajax_mostrarUsuario(){
 	$.ajax({
 		method: "POST",
 		url: "assets/php/mostrar_perfil.proc.php",
 		cache: false,
 		success: function(response) {
 			if( response.success ) {
-				
+
 				$.each(response.data.items, function( key, value ) {
 					$("#inp_usuario").val(value['usuario_usuario']);
 					$("#inp_nombre").val(value['usuario_nombre']);
@@ -120,7 +120,7 @@ function ajax_mostrarUsuario(){
 							break;
 					}
 					$("#inp_foto").val(value['foto_id']);
-					
+
 				});
 
 			} else {
@@ -134,7 +134,7 @@ function ajax_mostrarUsuario(){
 	});
 }
 
-function ajax_modificarUsuario(){ 
+function ajax_modificarUsuario(){
 	inp_usuario = $("#inp_usuario").val();
 	inp_nombre = $("#inp_nombre").val();
 	inp_apellido = $("#inp_apellido").val();
@@ -172,7 +172,7 @@ function ajax_modificarUsuario(){
 	});
 }
 
-function continuar(){ 
+function continuar(){
 	// 4.- llamamos a la funcion para deshabilitar los todos los elementos
 	disable_inputs();
 	// 5.- llamamos a la funcion para mostrar el usuario
@@ -229,7 +229,7 @@ function continuar(){
 			$("#div_error_pas").html(msg);
 			$("#inp_new_pas").css({"border": "1px solid red", "background-color": "#ffe8e8"});
 			$("#inp_conf_new_pas").css({"border": "1px solid red", "background-color": "#ffe8e8"});
-			passar = false;			
+			passar = false;
 		}
 
 		if (passar) {
@@ -270,4 +270,3 @@ $(document).ready(function(){
 	ajax_fotos();
 
 });
-
