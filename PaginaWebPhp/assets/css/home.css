@@ -6,3 +6,10 @@
 .info{
 	margin-left: 10%;
 }
+
+.div-left-home {
+	float: left;
+}
+.div-right-home {
+	float: right;
+}

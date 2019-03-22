@@ -49,20 +49,28 @@
 						<div class="col-md-3">Fondos disponibles este mes:</div>
 						<div class="col-md-3"><?php echo $array['usuario_fondos']; ?> EcoPoints</div>
 					</div>	
-								
 					
-
+					<div class="row">
+						<div class="col-md-12" style="text-align: center;">
+							Kilometros mensuales: <?php echo round($array2['kilometros_mensuales'], 0, PHP_ROUND_HALF_DOWN); ?> km
+						</div>
+					</div>
 
 					<?php include "assets/php/barra_progreso.php" ?>
-							<div class="row">
-      						<div class="col-md-4"><?php echo "<img src=\"".$array['nivel_fotoRuta'].$array['nivel_fotoNombre'].$array['nivel_fotoExtension']."\" style=\"width: 100px;\">"; ?></div>
-    					
-      						<div class="col-md-4" style="text-align: center;">Kilometros mensuales: <?php echo round($array2['kilometros_mensuales'], 0, PHP_ROUND_HALF_DOWN); ?> km</div>
-    					
-					     <div class="col-md-4" style="text-align: right;"><?php echo "<img src=\"".$array3['nivel_fotoRuta'].$array3['nivel_fotoNombre'].$array3['nivel_fotoExtension']."\" style=\"width: 100px;\">"; ?>
-					     	<?php echo "$msg"; ?>
-					     </div>
-					   	</div>
+
+
+					<div>
+						<div class="div-left-home">
+							<p>Nivel actual</p>
+							<?php echo "<img src=\"".$array['nivel_fotoRuta'].$array['nivel_fotoNombre'].$array['nivel_fotoExtension']."\" style=\"width: 100px;\">"; ?>
+						</div>
+						
+						<div class="div-right-home">
+							<p>Siguiente nivel</p>
+							<?php echo "<img src=\"".$array3['nivel_fotoRuta'].$array3['nivel_fotoNombre'].$array3['nivel_fotoExtension']."\" style=\"width: 100px;\">"; ?>
+							<?php echo "$msg"; ?>
+						</div>
+					</div>
 						
 						
 							

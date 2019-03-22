@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Ranking - EcoCycling</title>
+		<title>EcoCycling</title>
 		<link rel="icon" type="image/png" href="assets/img/isotipoFooter.png"/>
 
 		<!-- Font awesome -->
@@ -25,6 +25,7 @@
 		<link href="assets/css/footer.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/perfil.css" rel="stylesheet" type="text/css" >
 		<link href="assets/css/home.css" rel="stylesheet" type="text/css" >
+		<link href="assets/css/rankingStyle.css" rel="stylesheet" type="text/css"/>
 
 		<!-- Js propios -->
 		<script type="text/javascript" src="assets/js/indexFunctions.js" ></script>
