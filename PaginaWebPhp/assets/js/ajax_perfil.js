@@ -26,7 +26,7 @@ function escuachar_camposPerfil() {
 }
 
 
-//window.addEventListener("load", escuachar_camposPerfil);
+window.addEventListener("load", escuachar_camposPerfil);
 
 function disable_inputs(){ 
 	$("input").prop('disabled', true);
@@ -268,7 +268,6 @@ function continuar(){
 $(document).ready(function(){
 	// 1.- cuando hemos cargado la pagina llamamos a la funcion para cargar las fotos (esta funcion llamara a la funcion continuar)
 	ajax_fotos();
-	escuachar_camposPerfil();
 
 });
 

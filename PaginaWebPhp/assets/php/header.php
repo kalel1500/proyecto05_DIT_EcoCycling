@@ -15,6 +15,8 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+
+
 		<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
 
 		<!-- Estilos propios -->
@@ -22,6 +24,7 @@
 		<link href="assets/css/navegador.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/footer.css" rel="stylesheet" type="text/css"/>
 		<link href="assets/css/perfil.css" rel="stylesheet" type="text/css" >
+		<link href="assets/css/home.css" rel="stylesheet" type="text/css" >
 
 		<!-- Js propios -->
 		<script type="text/javascript" src="assets/js/indexFunctions.js" ></script>
