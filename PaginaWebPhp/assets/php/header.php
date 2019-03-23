@@ -44,20 +44,7 @@
 	</head>
 	<body>
 
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$.ajax({
-					method: "GET",
-					url: "assets/php/json/sessionCheck.json.php",
-				})
-				.done( function(response) {
-					if (response) {
-					} else {
-						window.location.replace("index.html");
-					}
-				});
-			});
-		</script>
+		
 
 		<header>
 			<nav class="navbar navbar-default navbar-fixed-top">
@@ -81,10 +68,12 @@
 							<li class="<?php echo ($ruta['filename'] == "home") ? "active" : ""; ?>"><a href="home.php"><i class="fas fa-home"></i> Home</a></li>
 							<li class="<?php echo ($ruta['filename'] == "ranking") ? "active" : ""; ?>"><a href="ranking.php"><i class="fas fa-medal"></i> Ranking</a></li>
 							<li class="<?php echo ($ruta['filename'] == "donations") ? "active" : ""; ?>"><a href="donations.php"><i class="fas fa-hand-holding-usd"></i> Donaciones</a></li>
+							<li class="<?php echo ($ruta['filename'] == "info") ? "active" : ""; ?>"><a href="info.php"><i class="fas fa-info"></i> Informacion</a></li>
+
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="<?php echo ($ruta['filename'] == "perfil") ? "active" : ""; ?>" id="li-link-nombre-usuario"><?php echo "<a href=\"perfil.php?id=$_SESSION[ecocycling_user_id]\">"?><i class="fas fa-user"></i> Perfil</a></li>
-							<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
+							<li class="<?php echo ($ruta['filename'] == "perfil") ? "active" : ""; ?>" id="li-link-nombre-usuario"><?php echo "<a href=\"perfil.php?id=$_SESSION[ecocycling_user_id]\">"?><i class="fas fa-user"></i> <span class="hide-size-tablet">Perfil</span></a></li>
+							<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> <span class="hide-size-tablet">Cerrar sesion</span></a></li>
 						</ul>
 					</div>
 				</div>

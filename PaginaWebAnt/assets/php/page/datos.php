@@ -27,7 +27,9 @@
 			$sum = $num+1;
 			echo "fecha fin: ".(time()+random_int(1800, 21600));
 		echo "<br>-------------------<br>";
-
+			//echo "round 11/15 hacia abajo".round(11/15, 0, PHP_ROUND_DOWN);
+			echo "round 11/15 hacia abajo". intval(30/15);
+		echo "<br>-------------------<br>";
 
 		echo "<br>--------fin-------------------------------------------------<br>";
 	?>

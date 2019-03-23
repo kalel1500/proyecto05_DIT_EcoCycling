@@ -23,15 +23,7 @@
 	  $.ajax({
 		method: "GET",
 		url: "assets/php/json/sessionCheck.json.php",
-		success: function(response) {
-		  response = JSON.parse(response);
-		  if (response.error) {
-			window.location.replace("index.html");
-					} else {
-
-		  }
-		},
-		complete: function() {
+		success: function() {
 		  $("#btn_history").trigger("click");
 		}
 	  })
@@ -48,7 +40,7 @@
 					options += `<tr>
 					  <th scope="row" class="rowIndex">${i+1}</th>
 					  <td>${result[i].user}</td>
-					  <td>${result[i].km} km</td>
+					  <td>${Math.round(result[i].km)} km</td>
 					  <td>${result[i].nivel}</td>
 					</tr>`;
 				  }
