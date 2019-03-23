@@ -9,7 +9,10 @@
 
 .div-left-home {
 	float: left;
+	margin-right: 10px;
+    display: inline-block;
 }
 .div-right-home {
 	float: right;
+	margin-right: 10px;
 }

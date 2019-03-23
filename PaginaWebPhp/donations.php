@@ -5,9 +5,9 @@
 
 	$sql = "SELECT * FROM tbl_entidad";
 	$data = $database->query($sql);
-	$money = $database->query("SELECT usuario_fondos FROM tbl_usuario WHERE usuario_id={$_SESSION['ecocycling_user_id']};");
+	$money = $database->query("SELECT usuario_fondosTotales FROM tbl_usuario WHERE usuario_id={$_SESSION['ecocycling_user_id']};");
 	while ($row = $money->fetch_assoc()) {
-		$points = round($row['usuario_fondos']);
+		$points = round($row['usuario_fondosTotales']);
 	} ?>
 
 

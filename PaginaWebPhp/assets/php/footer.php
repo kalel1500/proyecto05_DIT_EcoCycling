@@ -4,7 +4,7 @@
 				<div class="row text-center" id="rowFooter">
 					<div class="col-md-2">
 						<div class="col-md-12">
-							<a href=""><img class="img-isotipo-footer" src="assets/img/isotipoFooter.png" id="rotar"></a> <!-- isotipo es la imagen -->
+							<a href=""><img class="img-isotipo-footer rotar" src="assets/img/isotipoFooter.png" id="rotar"></a> <!-- isotipo es la imagen -->
 						</div>
 						<div class="col-md-12">
 							<a href=""><img class="img-logotipo-footer" src="assets/img/logotipoFooter.png"></a> <!-- logotipo son las letras -->
@@ -26,7 +26,7 @@
 
 		</footer>
 		<script type="text/javascript">
-			$("#rotar").mouseenter(function(){
+			$(".rotar").mouseenter(function(){
 					$(this).rotate(
 						{
 							angle: 0, 

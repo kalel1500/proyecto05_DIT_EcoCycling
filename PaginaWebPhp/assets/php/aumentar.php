@@ -33,15 +33,15 @@
 	$fecha->modify('first day of this month');
 	$primerDia = strtotime($fecha->format('Y-m-d H:i:s'));
 
-	$sql2 ="SELECT `tbl_usuario`.`usuario_fondos`, SUM(`tbl_historial`.`historial_kilometros`) AS 'kilometros_mensuales' FROM `tbl_usuario` INNER JOIN `tbl_historial` ON `tbl_usuario`.`usuario_id` = `tbl_historial`.`usuario_id` WHERE `tbl_usuario`.`usuario_id` = $_SESSION[ecocycling_user_id] AND `tbl_historial`.`historial_fechaFin` >= $primerDia AND `tbl_historial`.`historial_fechaFin` <= $ultimoDia GROUP BY `tbl_usuario`.`usuario_id`";
+	$sql2 ="SELECT `tbl_usuario`.`usuario_fondosMensuales`, `tbl_usuario`.`usuario_fondosTotales`, SUM(`tbl_historial`.`historial_kilometros`) AS 'kilometros_mensuales' FROM `tbl_usuario` INNER JOIN `tbl_historial` ON `tbl_usuario`.`usuario_id` = `tbl_historial`.`usuario_id` WHERE `tbl_usuario`.`usuario_id` = $_SESSION[ecocycling_user_id] AND `tbl_historial`.`historial_fechaFin` >= $primerDia AND `tbl_historial`.`historial_fechaFin` <= $ultimoDia GROUP BY `tbl_usuario`.`usuario_id`";
 
 	$consulta2=mysqli_query($link, $sql2);
 	$array2 = mysqli_fetch_array($consulta2);
 	$kilometros_mensuales = $array2['kilometros_mensuales'];
-	$fondos = $array2['usuario_fondos'];
+	$fTotales = $array2['usuario_fondosTotales'];
+	$fMensuales = $array2['usuario_fondosMensuales'];
 
-	
-	
+	/*--------------------version 1---------------------------------------*/
 	/*$fondos = 0;
 	if ($kilometros_mensuales >= 15) {
 		$fondos += 1;
@@ -58,19 +58,27 @@
 	if ($kilometros_mensuales >= 75) {
 		$fondos += 1;
 	}*/
-	// este fi sustituye a todo lo de arriba
-	$puntos = 0;
-	if ($kilometros_mensuales <= 75) {
-		$puntos = intval($kilometros_mensuales/15);
-		$fondos_actuales = intval($kilometros_mensuales/15);
+	/*--------------------version 2---------------------------------------*/
+	/*$puntos = 0;
+	if ($kilometros_mensuales <= 100) {
+		$puntos = intval($kilometros_mensuales/20);
+		$fondos_actuales = intval($kilometros_mensuales/20);
 	} else {
 		$fondos_actuales = 5;
+	}*/
+	/*--------------------version 3---------------------------------------*/
+	$puntos = intval($kilometros_mensuales/20);
+	if ($puntos > 5) {
+		$puntos = 5;
 	}
 
-	//$fondos_actuales = $puntos+$fondos;
 	
 
-	$query = "UPDATE `tbl_usuario` SET `usuario_fondos` = $fondos_actuales, `nivel_id` = $nivel_id WHERE `tbl_usuario`.`usuario_id` = $_SESSION[ecocycling_user_id];";
+	$fondosMensuales = $puntos;
+	$fondosTotales = $puntos;
+	
+
+	$query = "UPDATE `tbl_usuario` SET `usuario_fondosMensuales` = $fondosMensuales, `usuario_fondosTotales` = $fondosTotales, `nivel_id` = $nivel_id WHERE `tbl_usuario`.`usuario_id` = $_SESSION[ecocycling_user_id];";
 	$database->query($query);
 
 	//echo "$query";

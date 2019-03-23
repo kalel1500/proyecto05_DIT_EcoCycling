@@ -69,6 +69,7 @@
 							<li class="<?php echo ($ruta['filename'] == "ranking") ? "active" : ""; ?>"><a href="ranking.php"><i class="fas fa-medal"></i> Ranking</a></li>
 							<li class="<?php echo ($ruta['filename'] == "donations") ? "active" : ""; ?>"><a href="donations.php"><i class="fas fa-hand-holding-usd"></i> Donaciones</a></li>
 							<li class="<?php echo ($ruta['filename'] == "info") ? "active" : ""; ?>"><a href="info.php"><i class="fas fa-info"></i> Informacion</a></li>
+							<!-- <li class="<php echo ($ruta['filename'] == "consultas") ? "active" : ""; ?>"><a href="consultas.php"><i class="fas fa-info"></i> Con</a></li> -->
 
 						</ul>
 						<ul class="nav navbar-nav navbar-right">

@@ -2,16 +2,14 @@
 <?php
 	$km = round($array['kilometros_totales'], 0, PHP_ROUND_HALF_DOWN);
 	$numLength = strlen($km);
-
+	
 	$msg = "";
 	if ($km < 800) {
 		$msg = "";
-		if ($numLength == 1) {
-			$porcentage = $km;
-		} elseif ($numLength == 2) {
-			$porcentage = substr($km, -1, 1);
-		} elseif ($numLength == 3) {
+		if ($numLength == 3) {
 			$porcentage = substr($km, -2, 2);
+		} else {
+			$porcentage = $km;
 		}
 	} else {
 		$porcentage = 100;
