@@ -1,5 +1,6 @@
 <?php
 	/*session_start();*/
+	include "assets/php/conexion.php";
 	$msg = '';
 	$pass = true;
 	if (isset($_POST['email'])) {
@@ -31,7 +32,7 @@
 					}
 
 					if ($pass) {
-						$sql = "INSERT INTO `tbl_usuario` (`usuario_usuario`, `usuario_nombre`, `usuario_apellido`, `usuario_email`, `usuario_contrasena`, `usuario_ultimaConexion`, `usuario_ultimoReset`, `usuario_fondos`, `grupo_id`, `nivel_id`, `foto_id`) VALUES (:usuario, :nombre, :apellido, :email, :password, NULL, NULL, 0, (SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = 'Usuario'), (SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_numero` = 1), (SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = '1_foto01'))";
+						$sql = "INSERT INTO `tbl_usuario` (`usuario_usuario`, `usuario_nombre`, `usuario_apellido`, `usuario_email`, `usuario_contrasena`, `usuario_ultimaConexion`, `usuario_ultimoReset`, `usuario_fondosTotales`, `usuario_fondosMensuales`, `grupo_id`, `nivel_id`, `foto_id`) VALUES (:usuario, :nombre, :apellido, :email, :password, NULL, NULL, 0, 0, (SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = 'Usuario'), (SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_numero` = 1), (SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = '1_foto01'))";
 						$stmt = $conn->prepare($sql);
 						$stmt->bindParam(':usuario', $_POST['usuario']);
 						$stmt->bindParam(':nombre', $_POST['nombre']);
@@ -41,7 +42,7 @@
 						$stmt->bindParam(':password', $password);
 						if ($stmt->execute()) {
 							$msg .= "El usuario se ha creado correctamente";
-							header("Location: index.php");
+							header("Location: home.php");
 						} else {
 							$msg .= "Lo sentimos, ha debido de haber algun error al crear la cuenta.";
 						}
@@ -97,5 +98,5 @@
 			<button type="submit" class="btn btn-success btn-lg btn-block">Registrar Ahora</button>
 		</div>
 	</form>
-	<div class="text-center">Ya tienes una cuenta? <a href="index.php?mostrar=login">Inicia Sesion</a></div>
+	<div class="text-center">Ya tienes una cuenta? <a href="login.php">Inicia Sesion</a></div>
 </div>

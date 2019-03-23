@@ -41,5 +41,5 @@
 			</div>
 		<?php } ?>
 	</form>
-	<p class="text-center small">¡No tienes una cuenta aún! <a href="index.php?mostrar=signup">Regístrate aquí</a>.</p>
+	<p class="text-center small">¡No tienes una cuenta aún! <a href="signup.php">Regístrate aquí</a>.</p>
 </div>

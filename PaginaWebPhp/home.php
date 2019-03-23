@@ -6,7 +6,7 @@
 	$sql ="SELECT *, SUM(`tbl_historial`.`historial_kilometros`) AS 'kilometros_totales' FROM `tbl_usuario` INNER JOIN `tbl_historial` ON `tbl_usuario`.`usuario_id` = `tbl_historial`.`usuario_id` INNER JOIN `tbl_nivel` ON `tbl_usuario`.`nivel_id` = `tbl_nivel`.`nivel_id` INNER JOIN `tbl_foto` ON `tbl_usuario`.`foto_id` = `tbl_foto`.`foto_id`  WHERE `tbl_usuario`.`usuario_id` = $_SESSION[ecocycling_user_id] GROUP BY `tbl_usuario`.`usuario_id`";
 	$consulta=mysqli_query($link, $sql);
 	$array = mysqli_fetch_array($consulta);
-
+	
 	/*query 2-------------------------------*/
 	$fecha = new DateTime();
 	$fecha->modify('last day of this month');
@@ -109,7 +109,26 @@
 					</div>
 
 				</div>
-			<?php } ?>
+			<?php } else { ?>
+				<div class="row">
+						<form class="form-horizontal col-sm-5 center-block" action="assets/php/aumentar.php" method="POST">
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="inp_aumentar" id="label_aumentar">Aumentar en (km):</label>
+								<div class="col-sm-8">
+									<input class="form-control" type="number" id="inp_aumentar" name="inp_aumentar" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4 control-label" for="formGroup"></label>
+								<div class="col-sm-8">
+									<button type="button" class="btn btn-info btn-lg" id="modidy-buttonA"><span class="glyphicon glyphicon-pencil"></span> Aumentar kilometros</button>
+									<button type="submit" class="btn btn-success btn-lg" id="save-buttonA" style="display: none;"><span class="glyphicon glyphicon-floppy-saved"></span> Guardar</button>
+									<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" id="cancel-buttonA" style="display: none;"><span class="glyphicon glyphicon-remove-circle"></span> Cancelar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+			<?php }	?>
 		</div>
 	</article>			
 </section>
