@@ -1,4 +1,0 @@
-
-agnes estructura:
- -usuario foto nivel
- -tabla posicion bicileta para registro posiciones o en tabla bicileta para pos actual?
