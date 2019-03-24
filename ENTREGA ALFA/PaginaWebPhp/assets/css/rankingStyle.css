@@ -1,0 +1,43 @@
+body{
+  font-size: 14px;
+}
+.tblRanking thead {
+  background-color: #88C33D;
+}
+
+.btnContainer {
+  width: auto;
+  margin: auto;
+  text-align: center;
+}
+.rowIndex {
+  border-right: 1.5px solid #88C33D !important;
+}
+
+.btn_options {
+  border: 1px solid #88C33D;
+  background: transparent;
+  color: #88C33D;
+}
+.btn-active {
+  background-color: #88C33D;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #88C33D;
+  color: white;
+  border-color: darkgreen;
+}
+.btn:active, .btn:visited {
+  background-color: #88C33D !important;
+  color: white;
+  border-color: darkgreen;
+}
+.btn {
+  outline: none;
+}
+
+.table-responsive {
+  border: none !important;
+}
