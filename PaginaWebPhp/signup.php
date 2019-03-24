@@ -41,6 +41,17 @@
 						$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 						$stmt->bindParam(':password', $password);
 						if ($stmt->execute()) {
+
+							/*-----------------------historial-------------------*/
+							$km = 0;
+							$fechaInicio = time();
+							$fechaIFin = time()+1;
+							$usu = $_POST['usuario'];
+							$query = "INSERT INTO `tbl_historial` (`historial_fechaInicio`, `historial_fechaFin`, `historial_kilometros`, `usuario_id`, `bicicleta_id`) VALUES ('$fechaInicio', '$fechaIFin', $km, (SELECT `usuario_id` FROM `tbl_usuario` WHERE `usuario_usuario` = '$usu'), 1);";
+							$database->query($query);
+							echo $query;
+							/*-----------------------fin historial-------------------*/
+
 							$msg .= "El usuario se ha creado correctamente";
 							header("Location: home.php");
 						} else {
@@ -58,6 +69,8 @@
 		}
 	}
 ?>
+
+<a href="index.html">Inicio</a>
 
 <div class="signup-form">
 	<form action="signup.php" method="post">

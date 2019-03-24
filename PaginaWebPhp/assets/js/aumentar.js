@@ -1,17 +1,17 @@
 
 function disable_inputsA(){ 
-	$("input").prop('disabled', true);
+	$("#inp_aumentar").prop('disabled', true);
 	$("#save-buttonA").hide();
 	$("#cancel-buttonA").hide();
 	$("#inp_aumentar").val("");
 	$("#modidy-buttonA").show();
 	$("#div_error_aumentar").hide();
-	$("input").removeAttr('style');
+	$("#inp_aumentar").removeAttr('style');
 	$("#label_aumentar").hide();
 }
 
 function enable_inputsA(){ 
-	$("input").prop('disabled', false);
+	$("#inp_aumentar").prop('disabled', false);
 	$("#save-buttonA").show();
 	$("#cancel-buttonA").show();
 	$("#modidy-buttonA").hide();

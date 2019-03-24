@@ -17,6 +17,8 @@
 	}
 ?>
 
+<a href="index.html">Inicio</a>
+
 <div class="login-form">
 	<form action="login.php" method="post">
 		<h2 class="text-center">Inicia Sesión</h2>   

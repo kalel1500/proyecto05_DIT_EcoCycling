@@ -21,6 +21,6 @@
 
 
 <div class="progress progress-striped">
-	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentage; ?>%;">
+	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentage; ?>%;"><?php echo $porcentage; ?>%
 	</div>
 </div>

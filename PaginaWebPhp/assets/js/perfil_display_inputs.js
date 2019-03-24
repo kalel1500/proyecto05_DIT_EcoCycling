@@ -1,4 +1,4 @@
-var check_pass;
+/*var check_pass;
 var pass;
 var pass_conf;
 
@@ -26,4 +26,4 @@ function escuachar_camposPerfil() {
 }
 
 
-window.addEventListener("load", escuachar_camposPerfil);
+window.addEventListener("load", escuachar_camposPerfil);*/

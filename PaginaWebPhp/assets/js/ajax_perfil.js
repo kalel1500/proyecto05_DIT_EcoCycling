@@ -30,7 +30,7 @@ window.addEventListener("load", escuachar_camposPerfil);
 
 function disable_inputs(){
 	$(".perfil").prop('disabled', true);
-	$("select").prop('disabled', true);
+	//$("select").prop('disabled', true);
 	$('#group_change_pas').hide();
 	$(".radio-inline").addClass("inp-disabled");
 	$("#save-button").hide();
@@ -50,8 +50,8 @@ function disable_inputs(){
 }
 
 function enable_inputs(){
-	$("input").prop('disabled', false);
-	$("select").prop('disabled', false);
+	$(".perfil").prop('disabled', false);
+	//$("select").prop('disabled', false);
 	$('#group_change_pas').show();
 	$(".radio-inline").removeClass("inp-disabled");
 	$("#save-button").show();
@@ -68,7 +68,7 @@ function ajax_fotos(){
 		success: function(response) {
 			if( response.success ) {
 
-				var output = `<select class="form-control" id="inp_foto" name="inp_foto">`;
+				var output = `<select class="form-control perfil" id="inp_foto" name="inp_foto">`;
 				//recorremos cada foto
 				$.each(response.data.items, function( key, value ) {
 					output += `
