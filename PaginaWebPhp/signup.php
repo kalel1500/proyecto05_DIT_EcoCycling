@@ -51,7 +51,7 @@
 							/*-----------------------fin historial-------------------*/
 
 							$msg .= "El usuario se ha creado correctamente";
-							header("Location: home.php");
+							header("Location: index.html");
 						} else {
 							$msg .= "Lo sentimos, ha debido de haber algun error al crear la cuenta.";
 						}
