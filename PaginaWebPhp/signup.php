@@ -82,7 +82,7 @@
 
 	<body>
 		<div class="container text-center" style="margin-top: 20px; margin-bottom: 20px;">
-			<h1 class="text-dark font-weight-light">Únete hoy, practica el #<span class="green-text">Eco</span>Cycling</h1>
+			<h1 class="font-weight-light" style="color: white;">Únete hoy, practica el #<span class="green-text">Eco</span>Cycling</h1>
 		</div>
 
 		<section class="container">
@@ -95,7 +95,7 @@
 						</div>
 					<?php } ?>
 
-					<div class="contenedor-registro">
+					<div class="contenedor-registro" style="background-color: white;">
 						<form action="signup.php" class="main-form needs-validation" method="POST" novalidate>
 							<div class="form-group">
 								<label for="username">Usuario *</label>
@@ -113,8 +113,9 @@
 								<label for="password">Repetir Contraseña *</label>
 								<input type="password" name="repeatedPassword" id="repeatedPassword" class="form-control">
 							</div>
-							<br>
 							<button type="submit" class="btn btn-success btn-md btn-block">Submit</button>
+							<br>
+							<a href="index.html">Volver</a>
 						</form>
 					</div>
 				</div>
