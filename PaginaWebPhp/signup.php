@@ -70,46 +70,87 @@
 	}
 ?>
 
-<a href="index.html">Inicio</a>
+<!DOCTYPE html>
+<html lang="es">
 
-<div class="signup-form">
-	<form action="signup.php" method="post">
-		<h2>Registrate</h2>
-		<p class="hint-text">Crea tu cuenta. Es gratis y solo tardas un minuto.</p>
-		<?php if (!empty($msg)) { ?>
-			<div class="alert alert-danger">
-				<?php echo $msg; ?>
-			</div>
-		<?php } ?>
-		<div class="form-group">
-			<div class="row">
-				<div class="col-xs-6"><input type="text" class="form-control" name="nombre" placeholder="Nombre"></div>
-				<div class="col-xs-6"><input type="text" class="form-control" name="apellido" placeholder="Apellido"></div>
-			</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>EcoCycling | Registro</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+	<div class="bg"></div>
+	<div class="container text-center">
+		<h1 class="mt-5 text-dark font-weight-light">Únete hoy, practica el #<span class="green-text">Eco</span>Cycling</h1>
+		<p class="lead text-dark-50">An attractive yet subtle dropdown animation for dropdown menus loacated within a
+			Bootstrap navbar</p>
+	</div>
+	<div class="container-fluid">
+		<div class="row justify-content-center align-self-center">
+			<section class="col-sm-10 col-md-4">
+				<div class="contenedor-registro">
+					<form action="" class="main-form needs-validation" novalidate>
+						<!-- <div class="row">
+								<div class="col">
+									<div class="form-group">
+										<label for="firstname">Nombre</label>
+										<input type="text" name="firstname" id="firstname" class="form-control" />
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<label for="lastname">Apellidos</label>
+										<input type="text" name="lastname" id="lastname" class="form-control">
+									</div>
+								</div>
+							</div> -->
+						<div class="form-group">
+							<label for="username">Usuario *</label>
+							<input type="text" name="username" id="username" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="email">Correo electrónico *</label>
+							<input type="text" name="email" id="email" class="form-control">
+							<small class="form-text text-muted">
+								ejemplo@ejemplomail.com
+							</small>
+						</div>
+						<div class="form-group">
+							<label for="password">Contraseña *</label>
+							<input type="password" name="password" id="password" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="password">Repetir Contraseña *</label>
+							<input type="password" name="repeatedPassword" id="repeatedPassword" class="form-control">
+						</div>
+						<!-- <div class="form-group">
+								<label for="gender">Género</label>
+								<select name="gender" id="gender" class="form-control">
+									<option value="male">Hombre</option>
+									<option value="female">Mujer</option>
+									<option value="female">Prefiero no decirlo</option>
+								</select>
+							</div> -->
+						<div class="form-check">
+							<input type="checkbox" id="accept-terms" class="form-check-input">
+							<label for="accept-terms" class="form-check-label">Acepto los términos y condiciones</label>
+						</div><br>
+						<button type="submit" class="btn btn-success btn-md btn-block">Submit</button>
+					</form>
+				</div>
+			</section>
 		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" name="usuario" placeholder="Usuario para login" required="required">
-			<label class="label-campo-obligatorio">Campo obligatorio*</label>
-		</div>
-		<div class="form-group">
-			<input type="email" class="form-control" name="email" placeholder="Email" required="required">
-			<label class="label-campo-obligatorio">Campo obligatorio*</label>
-		</div>
-		<div class="form-group">
-			<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">
-			<label class="label-campo-obligatorio">Campo obligatorio*</label>
-		</div>
-		<div class="form-group">
-			<input type="password" class="form-control" name="confirm_password" placeholder="Confirmar contraseña" required="required">
-			<label class="label-campo-obligatorio">Campo obligatorio*</label>
-		</div>
-		<div class="form-group">
-			<label class="checkbox-inline"><input type="checkbox" required="required"> Acepto los <a href="#">Terminos de Uso</a> &amp; <a href="#">la Politica de Privacidad</a></label>
-			<label class="label-campo-obligatorio">Campo obligatorio*</label>
-		</div>
-		<div class="form-group">
-			<button type="submit" class="btn btn-success btn-lg btn-block">Registrar Ahora</button>
-		</div>
-	</form>
-	<div class="text-center">Ya tienes una cuenta? <a href="login.php">Inicia Sesion</a></div>
-</div>
+	</div>
+	</section>
+
+
+</body>
+<script src="assets/js/jquery-3.3.1.js"></script>
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+
+</html>
