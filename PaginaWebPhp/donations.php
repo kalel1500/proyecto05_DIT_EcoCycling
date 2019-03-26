@@ -1,7 +1,7 @@
 
 <?php include "assets/php/header.php" ?>
 <?php
-	require "assets/php/conexion.php";
+	
 
 	$sql = "SELECT * FROM tbl_entidad";
 	$data = $database->query($sql);

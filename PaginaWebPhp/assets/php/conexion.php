@@ -15,6 +15,14 @@
 	$link = mysqli_connect($ip, $user, $password, $bd_name) or die();
 	$acentos = $link->query("SET NAMES 'utf8'");
 
+	define('IP', 'localhost');
+	define('USER', 'root');
+	define('PASSWORD', '');
+	define('DB', 'bd_proyecto_5');
+
+	global $con;
+  	$con = new mysqli(IP,USER,PASSWORD,DB);
+
 	if (!$link) {
 		echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
 		echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
