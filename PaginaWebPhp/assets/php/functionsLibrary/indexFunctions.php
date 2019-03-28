@@ -29,8 +29,16 @@ function login_CheckData ($send_identifier,$send_pwd) {
               $_SESSION['ecocycling_user_id'] = $id;
               $_SESSION['ecocycling_user_user'] = $user;
               header("Location: ../../home.php");
+            } else {
+               session_start();
+              $_SESSION['error'] = true;
+              header("Location: ../../index.html");
             }
         }
+      } else {
+        session_start();
+        $_SESSION['error'] = true;
+        header("Location: ../../index.html");
       }
       //printf($data->num_rows);
 
@@ -38,11 +46,6 @@ function login_CheckData ($send_identifier,$send_pwd) {
 
 
       //$response = $data->fetch(PDO::FETCH_ASSOC);
-      $query = @mysqli_query($sql);
-      if (@mysqli_num_rows($query) == 1) {
-        echo "Todo correcto";
-      } else {
-        echo "ERROR";
-      }
+     
   }
 ?>

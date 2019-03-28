@@ -109,3 +109,9 @@ span.msg-diabled {
 .txt-padding-section {
 	padding-top: 8%;	
 }
+
+.alert-danger {
+    color: #ff283c;
+    background-color: transparent;
+    border-color: transparent;
+}
