@@ -17,3 +17,10 @@ body {
 	background-image: url("../img/bg_desenfocado.png");
 	background-size: cover; 
 }
+
+.alert-danger {
+    color: #ff283c;
+    background-color: transparent;
+    border-color: transparent;
+    text-align: center;
+}

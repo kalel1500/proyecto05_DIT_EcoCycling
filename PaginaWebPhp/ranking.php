@@ -37,8 +37,16 @@
 				  result = JSON.parse(result);
 				  let options = ``;
 				  for (let i = 0; i < result.length; i++) {
-					options += `<tr>
-					  <th scope="row" class="rowIndex">${i+1}</th>
+				  	if ((i+1) == 10) {
+				  		options += `<tr>
+					  <th scope="row" class="rowIndex">${i+1}</th>`;
+				  	} else {
+				  		options += `<tr>
+					  <th scope="row" class="rowIndex">0${i+1}</th>`;
+				  	}
+				  	
+					
+					options += `
 					  <td>${result[i].user}</td>
 					  <td>${Math.round(result[i].km)} km</td>
 					  <td>${result[i].nivel}</td>

@@ -34,7 +34,7 @@
 												<h3><?=$row['entidad_nombre']?></h3>
 												<p>Dinero enviado: <?=$row['entidad_dineroActual']?> €</p>
 												<p></p>
-												<p><a href="<?=$url?>" class="btn btn-primary" role="button">Ir a web</a></p>
+												<p><a href="<?=$url?>" class="btn btn-primary" role="button" target="_blank">Ir a web</a></p>
 											</div>
 								</div>
 						</div>
@@ -45,7 +45,12 @@
 											<h3>Donar a <?=$row['entidad_nombre']?></h3>
 											<br><br><p><?=$row['entidad_descripcion']?></p><br>
 											<p>Cartera: <?=$points?> ECOPoints</p>
-											Donar: <input type="text" form="form-<?=$photo?>" name="donation" id="donation" size="4" <?php if (!($pay)) { echo "disabled"; } ?> /> ECOPoints<br><br><br><br>
+											Donar: <input type="text" form="form-<?=$photo?>" name="donation" id="donation" size="4" <?php if (!($pay)) { echo "disabled"; } ?> /> ECOPoints
+											<br><br>
+											<?php if(isset($_REQUEST['msg_error']) && $_REQUEST['nom_org'] == $row['entidad_nombre'] ) {
+												echo "<span style='color: red;'>".$_REQUEST['msg_error']."</span>";
+											} ?>
+											<br><br>
 											<p><button href="#" type="submit" form="form-<?=$photo?>" class="btn btn-success" role="button">Realizar donación</button></p>
 										</div>
 										<form id="form-<?=$photo?>" action="assets/php/submitDonation.proc.php" method="POST">

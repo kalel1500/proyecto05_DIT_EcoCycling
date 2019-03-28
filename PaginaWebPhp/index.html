@@ -327,8 +327,9 @@
 									</div>
 									</div>
 									`);
-									$("#password").trigger("focusout");
-									$("#username").trigger("focusout");
+									$("#password").trigger("keyup");
+									$("#username").trigger("keyup");
+									$("#msg_error").remove();
 									return false;
 						} else {
 							return true;
@@ -338,17 +339,23 @@
 
 		});
 
-		$("#password").focusout(function() {
+		$("#password").keyup(function() {
 			$("#password").css("border-bottom","2px solid lightgreen");
 			if ($("#password").val() == "") {
 					$("#password").css("border-bottom","2px solid red");
 			}
+
+			if (($("#username").val() != "") && ($("#password").val() != "")) {
+				
+				$("#contenedor-error-js").remove();
+			}
 		});
-		$("#username").focusout(function() {
+		$("#username").keyup(function() {
 			$("#username").css("border-bottom","2px solid lightgreen");
 			if ($("#username").val() == "") {
 					$("#username").css("border-bottom","2px solid red");
 			}
+
 		});
 		</script>
 
