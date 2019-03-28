@@ -22,8 +22,7 @@
 		<!-- Custom styles for this template -->
 		<link href="assets/archivosIndex/css/landing-page.min.css" rel="stylesheet">
 		<link href="assets/archivosIndex/css/style.css" rel="stylesheet">
-
-		<style type="text/css">
+		<style media="screen">
 			.form-control:focus {
 				box-shadow: 0 0 0 0;
 			}
@@ -36,6 +35,7 @@
 	</head>
 
 	<body>
+
 
 		<!-- Navigation -->
 		<nav class="navbar navbar-light bg-light static-top">
@@ -59,14 +59,17 @@
 						</button>
 					</div>
 
-					<div class="modal-body" id="modal-body">
-						<form action="assets/php/login.proc.php" method="POST" class="main-form" id="login-form">
-							<div class="d-none msg_error text-center alert alert-danger alert-dismissible fade show" id="msg_error" role="alert">
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								Credenciales incorrectas.
-							</div>
+
+					<div class="modal-body contenedor-registro" id="modal-body">
+						<form action="assets/php/login.proc.php" class="main-form" id="login-form" method="POST">
+
+							 <div class="d-none msg_error text-center alert alert-danger alert-dismissible fade show" id="msg_error" role="alert">
+								 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								    <span aria-hidden="true">&times;</span>
+								  </button>
+								 Credenciales incorrectas.
+							 </div>
+
 							<div class="form-group">
 								<label for="username">Usuario o correo</label>
 								<input type="text" name="username" id="username" class="form-control">
@@ -75,13 +78,17 @@
 								<label for="password">Contraseña</label>
 								<input type="password" name="password" id="password" class="form-control">
 							</div>
+							<!-- <span>¿Aún no estás registrado? Regístrate ahora.</span> -->
 						</form>
-						
+
 					</div>
+
+
+
 
 					<div class="modal-footer">
 						<div style="float: left;width: 100%;">¿No tienes cuenta aún?&nbsp;<a href="signup.php"> Regístrate</a></div>
-						<button type="submit" form="login-form" class="btn btn-success">Entrar</button>
+						<button type="submit" form="login-form" class="btn btn-primary" id="login_submit">Entrar</button>
 					</div>
 				</div>
 			</div>
@@ -239,7 +246,7 @@
 				</div>
 			</div>
 		</section>
-		
+
 
 
 		<!-- Footer -->
@@ -295,7 +302,50 @@
 		<script src="assets/archivosIndex/js/validate.js"></script>
 		<script src="assets/archivosIndex/js/printModal.js"></script>
 		<script src="assets/archivosIndex/js/indexFunctions.js"></script>
-		
+		<script type="text/javascript">
+		$("#login-form").submit(function () {
+				event.preventDefault();
+				let inputValue = $.trim($("#username").val());
+				let inputValue2 = $.trim($("#password").val());
+				checkInputUsrEmail();
+
+				function checkInputUsrEmail() {
+					$("#contenedor-error-js").remove();
+						if (inputValue == '' || inputValue2 == '' ) {
+
+								$(".contenedor-registro").before(`
+									<div id="contenedor-error-js">
+									<div class="alert alert-danger alert-dismissible fade show" role="alert">
+											Faltan campos por rellenar.
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button>
+									</div>
+									</div>
+									`);
+									return false;
+						} else {
+							$("#login-form").submit();
+						}
+
+				}
+
+		});
+
+		$("#password").focusout(function() {
+			$("#password").css("border-bottom","2px solid lightgreen");
+			if ($("#password").val() == "") {
+					$("#password").css("border-bottom","2px solid red");
+			}
+		});
+		$("#username").focusout(function() {
+			$("#username").css("border-bottom","2px solid lightgreen");
+			if ($("#username").val() == "") {
+					$("#username").css("border-bottom","2px solid red");
+			}
+		});
+		</script>
+
 
 	</body>
 
