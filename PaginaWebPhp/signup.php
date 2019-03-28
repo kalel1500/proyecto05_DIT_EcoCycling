@@ -127,16 +127,16 @@
 	<script src="assets/archivosSignup/assets/js/bootstrap.bundle.js"></script>
 	<script src="assets/archivosSignup/assets/js/bootstrap.js"></script>
 	<script type="text/javascript">
-	$("#email").focusout(function () {
+	$("#email").keyup(function () {
 			checkEmail();
 	});
-	$("#username").focusout(function () {
+	$("#username").keyup(function () {
 			checkUsername();
 	});
-	$("#password").focusout(function () {
+	$("#password").keyup(function () {
 			checkPassword();
 	});
-	$("#repeatedPassword").focusout(function () {
+	$("#repeatedPassword").keyup(function () {
 			checkRepeatedPassword();
 	});
 	$("#form_sign").submit(function() {
