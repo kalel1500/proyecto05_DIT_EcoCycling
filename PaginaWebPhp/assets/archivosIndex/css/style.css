@@ -31,6 +31,11 @@ a{
 	color: #88c33d;
 }
 
+.simbolo-default {
+	font-size: 100%;
+	color:#88c33d;
+}
+
 .simbolo-php, .simbolo-html5, .simbolo-css3, .simbolo-js, .simbolo-adobe {
 	font-size: 300%;
 	padding: 4%;
@@ -89,4 +94,18 @@ span.msg-diabled {
     /* border: 1px solid; */
     box-shadow: 1 2 3 3;
     box-shadow: 0px 0px 19px 3px #ff8282;
+}
+
+.title-text {
+	font-size: 250%;
+}
+
+.txt-padding {
+	padding-top: 3%;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.txt-padding-section {
+	padding-top: 8%;	
 }

@@ -1,302 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
+<head>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="">
-		<meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-		<title>EcoCycling | Inicio</title>
+	<title>EcoCycling | Inicio</title>
 
-		<!-- Bootstrap core CSS -->
-		<link href="assets/archivosIndex/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="assets/archivosIndex/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- Custom fonts for this template -->
-		<link href="assets/archivosIndex/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-		<link href="assets/archivosIndex/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-			type="text/css">
+	<!-- Custom fonts for this template -->
+	<link href="assets/archivosIndex/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+	<link href="assets/archivosIndex/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"
+		type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+		type="text/css">
 
-		<!-- Custom styles for this template -->
-		<link href="assets/archivosIndex/css/landing-page.min.css" rel="stylesheet">
-		<link href="assets/archivosIndex/css/style.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="assets/archivosIndex/css/landing-page.min.css" rel="stylesheet">
+	<link href="assets/archivosIndex/css/style.css" rel="stylesheet">
 
-		<style type="text/css">
-			.form-control:focus {
-				box-shadow: 0 0 0 0;
-			}
-			.form-control {
-				border: 0px;
-				border-radius: 0px;
-				border-bottom: 2px solid lightgreen;
-			}
-		</style>
-	</head>
+	<style type="text/css">
+		.form-control:focus {
+			box-shadow: 0 0 0 0;
+		}
 
-	<body>
+		.form-control {
+			border: 0px;
+			border-radius: 0px;
+			border-bottom: 2px solid lightgreen;
+		}
+	</style>
+</head>
 
-		<!-- Navigation -->
-		<nav class="navbar navbar-light bg-light static-top">
-			<div class="container">
-				<a class="navbar-brand" href="#"> <img src="assets/archivosIndex/img/logohead.png" height="50px" alt=""></a>
-				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" id="goToLogin" data-toggle="modal" data-target="#modalForm">
-					Acceder
-				</button>
-		</nav>
+<body>
 
-		<!-- Modal -->
-		<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Inicio de sesión</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
+	<!-- Navigation -->
+	<nav class="navbar navbar-light bg-light static-top">
+		<div class="container">
+			<a class="navbar-brand" href="#"> <img src="assets/archivosIndex/img/logohead.png" height="50px" alt=""></a>
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" id="goToLogin" data-toggle="modal" data-target="#modalForm">
+				Acceder
+			</button>
+	</nav>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Inicio de sesión</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body" id="modal-body">
+					<form action="assets/php/login.proc.php" method="POST" class="main-form" id="login-form">
+						<div class="d-none msg_error text-center alert alert-danger alert-dismissible fade show"
+							id="msg_error" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							Credenciales incorrectas.
+						</div>
+						<div class="form-group">
+							<label for="username">Usuario o correo</label>
+							<input type="text" name="username" id="username" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="password">Contraseña</label>
+							<input type="password" name="password" id="password" class="form-control">
+						</div>
+					</form>
+
+				</div>
+
+				<div class="modal-footer">
+					<div style="float: left;width: 100%;">¿No tienes cuenta aún?&nbsp;<a href="signup.php">
+							Regístrate</a></div>
+					<button type="submit" form="login-form" class="btn btn-success">Entrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Masthead -->
+	<header class="masthead text-white text-center">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-9 mx-auto">
+					<h1 class="mb-5">ECOCycling</h1>
+					<h4 class="mb-5">Cuidemos el medio ambiente y saquemos provecho</h4>
+					<div class="store">
+						<a href=""><img src="assets/archivosIndex/img/google-play.png" alt=""></a>
+						<a href=""><img src="assets/archivosIndex/img/app-store.png" alt=""></a>
 					</div>
+				</div>
+				<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 
-					<div class="modal-body" id="modal-body">
-						<form action="assets/php/login.proc.php" method="POST" class="main-form" id="login-form">
-							<div class="d-none msg_error text-center alert alert-danger alert-dismissible fade show" id="msg_error" role="alert">
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								Credenciales incorrectas.
-							</div>
-							<div class="form-group">
-								<label for="username">Usuario o correo</label>
-								<input type="text" name="username" id="username" class="form-control">
-							</div>
-							<div class="form-group">
-								<label for="password">Contraseña</label>
-								<input type="password" name="password" id="password" class="form-control">
-							</div>
-						</form>
-						
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Icons Grid -->
+	<section class="features-icons bg-light text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+							<i class="fas fa-heartbeat m-auto text-primary"></i>
+						</div>
+						<h3>Saludable</h3>
+						<p class="lead mb-0">Un medio de transporte saludable y no contaminante</p>
 					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
 
-					<div class="modal-footer">
-						<div style="float: left;width: 100%;">¿No tienes cuenta aún?&nbsp;<a href="signup.php"> Regístrate</a></div>
-						<button type="submit" form="login-form" class="btn btn-success">Entrar</button>
+							<i class="fas fa-leaf m-auto text-primary"></i>
+						</div>
+						<h3>Ecológico</h3>
+						<p class="lead mb-0">Reducción drástica de la contaminación y mejora de la calidad de vida</p>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+
+							<i class="fas fa-piggy-bank m-auto text-primary"></i>
+						</div>
+						<h3>Ahorrar</h3>
+						<p class="lead mb-0">Reducción de costes mensuales en transportes</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Masthead -->
-		<header class="masthead text-white text-center">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-9 mx-auto">
-						<h1 class="mb-5">ECOCycling</h1>
-						<h4 class="mb-5">Cuidemos el medio ambiente y saquemos provecho</h4>
-						<div class="store">
-							<a href=""><img src="assets/archivosIndex/img/google-play.png" alt=""></a>
-							<a href=""><img src="assets/archivosIndex/img/app-store.png" alt=""></a>
-						</div>
-					</div>
-					<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+	</section>
 
-					</div>
+	<!-- Ventajas -->
+	<section class="showcase">
+		<div class="container-fluid p-0">
+			<div class="row no-gutters">
+				<div class="col-lg-6 order-lg-2 text-white showcase-img"
+					style="background-image: url('assets/archivosIndex/img/bg-showcase-1.jpg');"></div>
+				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
+					<h2>Párate a pensar</h2>
+					<p class="lead mb-0">¡Son todo ventajas! Ahorrarás dinero en transportes, llevarás un ritmo de vida
+						más
+						saludable y ayudarás al medio ambiente.</p>
 				</div>
 			</div>
-		</header>
-
-		<!-- Icons Grid -->
-		<section class="features-icons bg-light text-center">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-							<div class="features-icons-icon d-flex">
-								<i class="fas fa-heartbeat m-auto text-primary"></i>
-							</div>
-							<h3>Saludable</h3>
-							<p class="lead mb-0">Un medio de transporte saludable y no contaminante</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-							<div class="features-icons-icon d-flex">
-
-								<i class="fas fa-leaf m-auto text-primary"></i>
-							</div>
-							<h3>Ecológico</h3>
-							<p class="lead mb-0">Reducción drástica de la contaminación y mejora de la calidad de vida</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="features-icons-item mx-auto mb-0 mb-lg-3">
-							<div class="features-icons-icon d-flex">
-
-								<i class="fas fa-piggy-bank m-auto text-primary"></i>
-							</div>
-							<h3>Ahorrar</h3>
-							<p class="lead mb-0">Reducción de costes mensuales en transportes</p>
-						</div>
-					</div>
+			<div class="row no-gutters">
+				<div class="col-lg-6 text-white showcase-img"
+					style="background-image: url('assets/archivosIndex/img/bg-showcase-2.jpg');"></div>
+				<div class="col-lg-6 my-auto showcase-text">
+					<h2>Únete a nuestra comunidad</h2>
+					<p class="lead mb-0">És tan sencillo como descargarte nuestra app en tu smartphone registrarte y
+						pedalear.</p>
 				</div>
 			</div>
-		</section>
-
-		<!-- Ventajas -->
-		<section class="showcase">
-			<div class="container-fluid p-0">
-				<div class="row no-gutters">
-
-					<div class="col-lg-6 order-lg-2 text-white showcase-img"
-						style="background-image: url('assets/archivosIndex/img/bg-showcase-1.jpg');"></div>
-					<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-						<h2>Párate a pensar</h2>
-						<p class="lead mb-0">¡Son todo ventajas! Ahorrarás dinero en transportes, llevarás un ritmo de vida más
-							saludable y ayudarás al medio ambiente.</p>
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/archivosIndex/img/bg-showcase-2.jpg');"></div>
-					<div class="col-lg-6 my-auto showcase-text">
-						<h2>Únete a nuestra comunidad</h2>
-						<p class="lead mb-0">És tan sencillo como descargarte nuestra app en tu smartphone registrarte y pedalear.</p>
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-lg-6 order-lg-2 text-white showcase-img"
-						style="background-image: url('assets/archivosIndex/img/bg-showcase-3.jpg');"></div>
-					<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-						<h2>Colaboremos con el planeta</h2>
-						<p class="lead mb-0">También puedes hacer donaciones a través de nuestro sistema de Puntos a diferentes
-							asociaciones benéficas.</p>
-					</div>
+			<div class="row no-gutters">
+				<div class="col-lg-6 order-lg-2 text-white showcase-img"
+					style="background-image: url('assets/archivosIndex/img/bg-showcase-3.jpg');"></div>
+				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
+					<h2>Colaboremos con el planeta</h2>
+					<p class="lead mb-0">También puedes hacer donaciones a través de nuestro sistema de Puntos a
+						diferentes
+						asociaciones benéficas.</p>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
+
+	<!-- Qué hacemos -->
+	<section class="testimonials text-center bg-light">
+		<div class="container">
+			<h2 class="mb-5 title-text"><span class="text-primary">¿</span>&nbsp;&nbsp;Qué hacemos&nbsp;&nbsp;<span
+					class="text-primary">?</span></h2>
+		</div>
+
+		<div class="container-fluid p-0">
+			<div class="row no-gutters">
+				<div class="col-lg-12 order-lg-1 my-auto showcase-text">
+					<h3 class="justify">Nuestro objetivo, una ciudad&nbsp;<span
+							class="text-primary">#</span>ECO&nbsp;<span class="simbolo-default">
+							<i class="fas fa-leaf"></i></span>
+					</h3>
+					<p class="lead mb-0 txt-padding">
+						Ofrecemos un medio asequible de transporte compartido para viajes urbanos cortos<br>
+						Reduce la congestión y la huella de carbono de nuestra ciudad. <br>
+						Estos combinados - ECOCycling mejora la calidad de vida de la ciudad.
+					</p>
+				</div>
+			</div>
+			<div class="row no-gutters txt-padding-section">
+				<div class="col-lg-12 order-lg-1 my-auto showcase-text">
+					<h3 class="justify">Nuestro objetivo, una ciudad&nbsp;<span
+							class="text-primary">#</span>ECO&nbsp;<span class="simbolo-default">
+							<i class="fas fa-leaf"></i></span>
+					</h3>
+					<p class="lead mb-0 txt-padding">
+						Ofrecemos un medio asequible de transporte compartido para viajes urbanos cortos<br>
+						Reduce la congestión y la huella de carbono de nuestra ciudad. <br>
+						Estos combinados - ECOCycling mejora la calidad de vida de la ciudad.
+					</p>
+				</div>
+			</div>
+			<div class="row no-gutters txt-padding-section">
+				<div class="col-lg-12 order-lg-1 my-auto showcase-text">
+					<h3 class="justify">Nuestro objetivo, una ciudad&nbsp;<span
+							class="text-primary">#</span>ECO&nbsp;<span class="simbolo-default">
+							<i class="fas fa-leaf"></i></span>
+					</h3>
+					<p class="lead mb-0 txt-padding">
+						Ofrecemos un medio asequible de transporte compartido para viajes urbanos cortos<br>
+						Reduce la congestión y la huella de carbono de nuestra ciudad. <br>
+						Estos combinados - ECOCycling mejora la calidad de vida de la ciudad.
+					</p>
+				</div>
+			</div>
+	</section>
 
 
 	<!-- Conoce el equipo -->
-		<section class="testimonials text-center bg-light">
-			<div class="container">
-				<h2 class="mb-5"><span class="simbolo-code"><i class="fas fa-chevron-left"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;Conoce al equipo desarrollador&nbsp;&nbsp;&nbsp;&nbsp;<span class="simbolo-code"><i class="fas fa-chevron-right"></i></span></h2>
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-							<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user.png" alt="">
-							<h5>Erix Mamani</h5>
-							<h6>Estudiante de DAW II</h6>
-							<p class="font-weight-light mb-0">Programador Rookie</p>
-							<span class="simbolo-php"><i class="fab fa-php"></i></span>
-							<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
-							<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
-						</div>
+	<section class="testimonials text-center bg-light">
+		<div class="container">
+			<h2 class="mb-5 title-text"><span class="simbolo-code"><i
+						class="fas fa-chevron-left"></i></span>&nbsp;&nbsp;&nbsp;&nbsp;Conoce al equipo
+				desarrollador&nbsp;&nbsp;&nbsp;&nbsp;<span class="simbolo-code"><i
+						class="fas fa-chevron-right"></i></span></h2>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="testimonial-item mx-auto mb-5 mb-lg-0">
+						<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user.png" alt="">
+						<h5>Erix Mamani</h5>
+						<h6>Estudiante de DAW II</h6>
+						<p class="font-weight-light mb-0">Programador Rookie</p>
+						<span class="simbolo-php"><i class="fab fa-php"></i></span>
+						<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
+						<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
 					</div>
-					<div class="col-lg-4">
-						<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-							<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user2.png" alt="">
-							<h5>Adrián Canals</h5>
-							<h6>Estudiante de DAW II</h6>
-							<p class="font-weight-light mb-0">Programador Rookie</p>
-							<span class="simbolo-php"><i class="fab fa-php"></i></span>
-							<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
-							<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
-						</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="testimonial-item mx-auto mb-5 mb-lg-0">
+						<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user2.png" alt="">
+						<h5>Adrián Canals</h5>
+						<h6>Estudiante de DAW II</h6>
+						<p class="font-weight-light mb-0">Programador Rookie</p>
+						<span class="simbolo-php"><i class="fab fa-php"></i></span>
+						<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
+						<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
 					</div>
-					<div class="col-lg-4">
-						<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-							<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user3.png" alt="">
-							<h5>Dani Álvarez</h5>
-							<h6>Estudiante de DAW II</h6>
-							<p class="font-weight-light mb-0">Maquetador y diseñador UI/UX Rookie</p>
-							<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
-							<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
-							<span class="simbolo-adobe"><i class="fab fa-adobe"></i></span>
-						</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="testimonial-item mx-auto mb-5 mb-lg-0">
+						<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user3.png" alt="">
+						<h5>Dani Álvarez</h5>
+						<h6>Estudiante de DAW II</h6>
+						<p class="font-weight-light mb-0">Maquetador y diseñador UI/UX Rookie</p>
+						<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
+						<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
+						<span class="simbolo-adobe"><i class="fab fa-adobe"></i></span>
 					</div>
-					<div class="col-lg-6">
-						<div class="testimonial-item mx-auto mb-5 mb-lg-0 segunda-fila">
-							<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user4.png" alt="">
-							<h5>Manuel Carceller</h5>
-							<h6>Estudiante de DAW II</h6>
-							<p class="font-weight-light mb-0">Maquetador y diseñador Rookie</p>
-							<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
-							<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
-							<span class="simbolo-adobe"><i class="fab fa-adobe"></i></span>
-						</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="testimonial-item mx-auto mb-5 mb-lg-0 segunda-fila">
+						<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user4.png" alt="">
+						<h5>Manuel Carceller</h5>
+						<h6>Estudiante de DAW II</h6>
+						<p class="font-weight-light mb-0">Maquetador y diseñador Rookie</p>
+						<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
+						<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
+						<span class="simbolo-adobe"><i class="fab fa-adobe"></i></span>
 					</div>
-					<div class="col-lg-6">
-						<div class="testimonial-item mx-auto mb-5 mb-lg-0 segunda-fila">
-							<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user5.png" alt="">
-							<h5>Alejandro Reñones</h5>
-							<h6>Estudiante de DAW II</h6>
-							<p class="font-weight-light mb-0">Desarrollador Front-End Rookie</p>
-							<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
-							<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
-							<span class="simbolo-js"><i class="fab fa-js"></i></span>
-						</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="testimonial-item mx-auto mb-5 mb-lg-0 segunda-fila">
+						<img class="img-fluid rounded-circle mb-3" src="assets/archivosIndex/img/user5.png" alt="">
+						<h5>Alejandro Reñones</h5>
+						<h6>Estudiante de DAW II</h6>
+						<p class="font-weight-light mb-0">Desarrollador Front-End Rookie</p>
+						<span class="simbolo-html5"><i class="fab fa-html5"></i></span>
+						<span class="simbolo-css3"><i class="fab fa-css3"></i></span>
+						<span class="simbolo-js"><i class="fab fa-js"></i></span>
 					</div>
 				</div>
 			</div>
-		</section>
-		
+		</div>
+	</section>
 
 
-		<!-- Footer -->
-		<footer class="footer bg-light">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-						<ul class="list-inline mb-2">
-							<li class="list-inline-item">
-								<a href="#">Sobre nosotros</a>
-							</li>
-							<li class="list-inline-item">&sdot;</li>
-							<li class="list-inline-item">
-								<a href="#">Contacto</a>
-							</li>
-							<li class="list-inline-item">&sdot;</li>
-							<li class="list-inline-item">
-								<a href="#">Términos de uso</a>
-							</li>
-							<li class="list-inline-item">&sdot;</li>
-							<li class="list-inline-item">
-								<a href="#">Política de privacidad</a>
-							</li>
-						</ul>
-						<p class="text-muted small mb-4 mb-lg-0">&copy; ECOCycling 2019. Todos los derechos reservados.</p>
-					</div>
-					<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-						<ul class="list-inline mb-0">
-							<li class="list-inline-item mr-3">
-								<a href="#">
-									<i class="fab fa-facebook fa-2x fa-fw"></i>
-								</a>
-							</li>
-							<li class="list-inline-item mr-3">
-								<a href="#">
-									<i class="fab fa-twitter-square fa-2x fa-fw"></i>
-								</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="#">
-									<i class="fab fa-instagram fa-2x fa-fw"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+
+	<!-- Footer -->
+	<footer class="footer bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+					<ul class="list-inline mb-2">
+						<li class="list-inline-item">
+							<a href="#">Sobre nosotros</a>
+						</li>
+						<li class="list-inline-item">&sdot;</li>
+						<li class="list-inline-item">
+							<a href="#">Contacto</a>
+						</li>
+						<li class="list-inline-item">&sdot;</li>
+						<li class="list-inline-item">
+							<a href="#">Términos de uso</a>
+						</li>
+						<li class="list-inline-item">&sdot;</li>
+						<li class="list-inline-item">
+							<a href="#">Política de privacidad</a>
+						</li>
+					</ul>
+					<p class="text-muted small mb-4 mb-lg-0">&copy; ECOCycling 2019. Todos los derechos reservados.</p>
+				</div>
+				<div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item mr-3">
+							<a href="#">
+								<i class="fab fa-facebook fa-2x fa-fw"></i>
+							</a>
+						</li>
+						<li class="list-inline-item mr-3">
+							<a href="#">
+								<i class="fab fa-twitter-square fa-2x fa-fw"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#">
+								<i class="fab fa-instagram fa-2x fa-fw"></i>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
-		<!-- Bootstrap core JavaScript -->
-		<script src="assets/archivosIndex/vendor/jquery/jquery.min.js"></script>
-		<script src="assets/archivosIndex/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="assets/archivosIndex/js/validate.js"></script>
-		<script src="assets/archivosIndex/js/printModal.js"></script>
-		<script src="assets/archivosIndex/js/indexFunctions.js"></script>
-		
+	<!-- Bootstrap core JavaScript -->
+	<script src="assets/archivosIndex/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/archivosIndex/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/archivosIndex/js/validate.js"></script>
+	<script src="assets/archivosIndex/js/printModal.js"></script>
+	<script src="assets/archivosIndex/js/indexFunctions.js"></script>
 
-	</body>
+</body>
 
 </html>
