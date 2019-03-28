@@ -48,8 +48,11 @@
 
 			 },
 			 complete: function() {
-				$(".monthPrinter").html(`Resultados del mes: ${month[d.getMonth()]}`);
-
+			 	$(".monthPrinter").html("<br>");
+			 	if (button == 1) {
+			 		$(".monthPrinter").html(`Resultados del mes: ${month[d.getMonth()]}`);
+			 	}
+			 	
 			 }
 		  });
 	  }

@@ -135,6 +135,7 @@ CREATE TABLE IF NOT EXISTS `tbl_entidad` (
 	`entidad_descripcion`	varchar(255)	COLLATE utf8_unicode_ci	DEFAULT NULL											,
 	`entidad_dineroMeta`	decimal(5,2)							DEFAULT NULL											,
 	`entidad_dineroActual`	decimal(5,2)							DEFAULT NULL											,
+	`entidad_url`			varchar(100)							DEFAULT NULL											,
 	`grupoEntidad_id`		int(11)									DEFAULT NULL				COMMENT 'fk_grupoEntidad'	,
 	PRIMARY KEY	`pk_entidad_id`(`entidad_id`)
 ) ENGINE=InnoDB								DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci									;
@@ -307,16 +308,16 @@ INSERT INTO `tbl_grupoentidad` (`grupoEntidad_nombre`, `grupoEntidad_descripcion
 ('Economía y sanidad',	'Entidades que centran su actividad en proporcionar ayuda económica y sanitaria a las personas necesitadas. También contribuyen en el desarrollo de estos ámbitos en diferentes localidades.');
 
 
-INSERT INTO `tbl_entidad` (`entidad_nombre`, `entidad_dineroMeta`, `entidad_dineroActual`, `grupoEntidad_id`, `entidad_descripcion`) VALUES
-('UNICEF',				700.00,	40.00,	2,	'Organizacion no goburnamental de las naciones unidas que provee ayuda humanitaria y de desarrollo a niños y a padres'),
-('SAVE THE CHILDREN',	800.00,	10.00,	2,	'Save the children es una organizacion no gubernamental para la educacion,sanidad y proteccion infantil'),
-('GREENPEACE',			500.00,	20.00,	1,	'Greenpeace es una organización no gubernamental ecologista y pacifista internacional fundada en Canadá en 1971'),
-('WWF',					999.00,	62.00,	1,	'El Fondo Mundial para la Naturaleza es una organización de conservación global del ambiente, investigación y de defensa ambiental.'),
-('CÁRITAS',				700.00,	54.00,	2,	'Cáritas es un organismo de la Iglesia católica dedicado a la coordinación de la beneficencia humanitaria.');
-/*('LA VINYA',			900.00,	60.00,	2,	'Somos una entidad que trabaja para atender a las personas en situación de riesgo social de los barrios de Bellvitge y El Gornal de la ciudad de L\'Hospitalet.'),
-('ACCIONATURA',			900.00,	5.00,	1,	'Organización Española de defensa del medio ambiente y su entorno'),
-('TOBARRI',				800.00,	23.00,	2,	'Organizacion en defensa de la precariedad en el barrio de Tobarra (VALDEPIERNA)'),
-('DANAL',				999.00,	1.00,	2,	'Entidad en defensa de el mundo rural y los espacios naturales');
+INSERT INTO `tbl_entidad` (`entidad_nombre`, `entidad_dineroMeta`, `entidad_dineroActual`, `grupoEntidad_id`, `entidad_url`, `entidad_descripcion`) VALUES
+('UNICEF',				700.00,	40.00,	2,	'https://www.unicef.es/',			'Organizacion no goburnamental de las naciones unidas que provee ayuda humanitaria y de desarrollo a niños y a padres'),
+('SAVE THE CHILDREN',	800.00,	10.00,	2,	'https://www.savethechildren.es/',	'Save the children es una organizacion no gubernamental para la educacion,sanidad y proteccion infantil'),
+('GREENPEACE',			500.00,	20.00,	1,	'https://es.greenpeace.org/es/',	'Greenpeace es una organización no gubernamental ecologista y pacifista internacional fundada en Canadá en 1971'),
+('WWF',					999.00,	62.00,	1,	'https://www.wwf.es/',				'El Fondo Mundial para la Naturaleza es una organización de conservación global del ambiente, investigación y de defensa ambiental.'),
+('CÁRITAS',				700.00,	54.00,	2,	'https://www.caritas.es/',			'Cáritas es un organismo de la Iglesia católica dedicado a la coordinación de la beneficencia humanitaria.');
+/*('LA VINYA',			900.00,	60.00,	2,	NULL,								'Somos una entidad que trabaja para atender a las personas en situación de riesgo social de los barrios de Bellvitge y El Gornal de la ciudad de L\'Hospitalet.'),
+('ACCIONATURA',			900.00,	5.00,	1,	NULL,								'Organización Española de defensa del medio ambiente y su entorno'),
+('TOBARRI',				800.00,	23.00,	2,	NULL,								'Organizacion en defensa de la precariedad en el barrio de Tobarra (VALDEPIERNA)'),
+('DANAL',				999.00,	1.00,	2,	NULL,								'Entidad en defensa de el mundo rural y los espacios naturales');
 */
 
 INSERT INTO `tbl_historial` (`historial_fechaInicio`, `historial_fechaFin`, `historial_kilometros`, `usuario_id`, `bicicleta_id`) VALUES

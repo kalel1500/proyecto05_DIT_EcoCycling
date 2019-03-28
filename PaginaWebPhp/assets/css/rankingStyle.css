@@ -19,7 +19,7 @@ body{
   background: transparent;
   color: #88C33D;
 }
-.btn-active {
+/*.btn-active {
   background-color: #88C33D;
   color: white;
 }
@@ -33,7 +33,7 @@ body{
   background-color: #88C33D !important;
   color: white;
   border-color: darkgreen;
-}
+}*/
 .btn {
   outline: none;
 }
