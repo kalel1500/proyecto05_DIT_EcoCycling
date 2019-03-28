@@ -118,12 +118,13 @@ CREATE TABLE IF NOT EXISTS `tbl_nivel` (
 
 DROP TABLE IF EXISTS `tbl_pago`;
 CREATE TABLE IF NOT EXISTS `tbl_pago` (
-	`pago_id`			int(11) 	NOT NULL	AUTO_INCREMENT	COMMENT 'pk_pago'		,
-	`pago_cantidad`		decimal(5,2)NOT NULL											,
-	`usuario_id`		int(11)		NOT NULL					COMMENT 'fk_usuario'	,
-	`entidad_id`		int(11)		NOT NULL					COMMENT 'fk_entidad'	,
+	`pago_id`			int(11) 		NOT NULL	AUTO_INCREMENT	COMMENT 'pk_pago'		,
+	`pago_cantidad`		decimal(5,2)	NOT NULL											,
+	/*`pago_fecha`		decimal(11,1)	NOT NULL											,*/ /*añadir en un futuro*/
+	`usuario_id`		int(11)			NOT NULL					COMMENT 'fk_usuario'	,
+	`entidad_id`		int(11)			NOT NULL					COMMENT 'fk_entidad'	,
 	PRIMARY KEY	`pk_pago_id`(`pago_id`)
-) ENGINE=InnoDB						DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci		;
+) ENGINE=InnoDB							DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci		;
 
 -- --------------------------------------------------------
 -- Estructura de tabla para la tabla `tbl_entidad`
@@ -236,31 +237,21 @@ INSERT INTO `tbl_nivel` (`nivel_nombre`,`nivel_numero`,`nivel_kilometros`,`nivel
 INSERT INTO `tbl_foto` (`foto_ruta`,`foto_nombre`,`foto_extension`,`nivel_id`) VALUES
 ('assets/img/users/',	'1_foto01',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel00")),
 ('assets/img/users/',	'2_foto02',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel00")),
-('assets/img/users/',	'3_foto03',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel00")),
+('assets/img/users/',	'3_foto03',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01")),
 ('assets/img/users/',	'4_foto04',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01")),
-('assets/img/users/',	'5_foto05',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01")),
-('assets/img/users/',	'6_foto06',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel01")),
-('assets/img/users/',	'7_foto07',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel02")),
-('assets/img/users/',	'8_foto08',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel02")),
-('assets/img/users/',	'9_foto09',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel02")),
-('assets/img/users/',	'10_foto10',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel03")),
-('assets/img/users/',	'11_foto11',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel03")),
-('assets/img/users/',	'12_foto12',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel03")),
-('assets/img/users/',	'13_foto13',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel04")),
-('assets/img/users/',	'14_foto14',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel04")),
-('assets/img/users/',	'15_foto15',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel04")),
-('assets/img/users/',	'16_foto16',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel05")),
-('assets/img/users/',	'17_foto17',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel05")),
-('assets/img/users/',	'18_foto18',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel05")),
-('assets/img/users/',	'19_foto19',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel06")),
-('assets/img/users/',	'20_foto20',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel06")),
-('assets/img/users/',	'21_foto21',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel06")),
-('assets/img/users/',	'22_foto22',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel07")),
-('assets/img/users/',	'23_foto23',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel07")),
-('assets/img/users/',	'24_foto24',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel07")),
-('assets/img/users/',	'25_foto25',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel08")),
-('assets/img/users/',	'26_foto26',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel08")),
-('assets/img/users/',	'27_foto27',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel08"));
+('assets/img/users/',	'5_foto05',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel02")),
+('assets/img/users/',	'6_foto06',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel02")),
+('assets/img/users/',	'7_foto07',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel03")),
+('assets/img/users/',	'8_foto08',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel03")),
+('assets/img/users/',	'9_foto09',		'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel04")),
+('assets/img/users/',	'10_foto10',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel04")),
+('assets/img/users/',	'11_foto11',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel05")),
+('assets/img/users/',	'12_foto12',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel05")),
+('assets/img/users/',	'13_foto13',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel06")),
+('assets/img/users/',	'14_foto14',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel06")),
+('assets/img/users/',	'15_foto15',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel07")),
+('assets/img/users/',	'16_foto16',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel07")),
+('assets/img/users/',	'17_foto17',	'.png',	(SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_nombre` = "nivel058"));
 
 
 -- TRUNCATE TABLE `tbl_usuario`;
