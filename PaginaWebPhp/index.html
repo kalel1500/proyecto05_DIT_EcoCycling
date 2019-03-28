@@ -304,10 +304,14 @@
 		<script src="assets/archivosIndex/js/indexFunctions.js"></script>
 		<script type="text/javascript">
 		$("#login-form").submit(function () {
-				event.preventDefault();
+				
 				let inputValue = $.trim($("#username").val());
 				let inputValue2 = $.trim($("#password").val());
-				checkInputUsrEmail();
+				if (checkInputUsrEmail()) {
+					$("#login-form").submit();
+				} else {
+					event.preventDefault();
+				}
 
 				function checkInputUsrEmail() {
 					$("#contenedor-error-js").remove();
@@ -323,9 +327,11 @@
 									</div>
 									</div>
 									`);
+									$("#password").trigger("focusout");
+									$("#username").trigger("focusout");
 									return false;
 						} else {
-							$("#login-form").submit();
+							return true;
 						}
 
 				}
