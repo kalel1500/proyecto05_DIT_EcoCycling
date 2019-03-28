@@ -312,12 +312,12 @@ INSERT INTO `tbl_entidad` (`entidad_nombre`, `entidad_dineroMeta`, `entidad_dine
 ('SAVE THE CHILDREN',	800.00,	10.00,	2,	'Save the children es una organizacion no gubernamental para la educacion,sanidad y proteccion infantil'),
 ('GREENPEACE',			500.00,	20.00,	1,	'Greenpeace es una organización no gubernamental ecologista y pacifista internacional fundada en Canadá en 1971'),
 ('WWF',					999.00,	62.00,	1,	'El Fondo Mundial para la Naturaleza es una organización de conservación global del ambiente, investigación y de defensa ambiental.'),
-('CARITAS',				700.00,	54.00,	2,	'Cáritas es un organismo de la Iglesia católica dedicado a la coordinación de la beneficencia humanitaria.'),
-('LA VINYA',			900.00,	60.00,	2,	'Somos una entidad que trabaja para atender a las personas en situación de riesgo social de los barrios de Bellvitge y El Gornal de la ciudad de L\'Hospitalet.'),
+('CÁRITAS',				700.00,	54.00,	2,	'Cáritas es un organismo de la Iglesia católica dedicado a la coordinación de la beneficencia humanitaria.');
+/*('LA VINYA',			900.00,	60.00,	2,	'Somos una entidad que trabaja para atender a las personas en situación de riesgo social de los barrios de Bellvitge y El Gornal de la ciudad de L\'Hospitalet.'),
 ('ACCIONATURA',			900.00,	5.00,	1,	'Organización Española de defensa del medio ambiente y su entorno'),
 ('TOBARRI',				800.00,	23.00,	2,	'Organizacion en defensa de la precariedad en el barrio de Tobarra (VALDEPIERNA)'),
 ('DANAL',				999.00,	1.00,	2,	'Entidad en defensa de el mundo rural y los espacios naturales');
-
+*/
 
 INSERT INTO `tbl_historial` (`historial_fechaInicio`, `historial_fechaFin`, `historial_kilometros`, `usuario_id`, `bicicleta_id`) VALUES
 (UNIX_TIMESTAMP('2019-03-01 13:41:10'), UNIX_TIMESTAMP('2019-03-01 22:41:10'), 1,	1,	1),
