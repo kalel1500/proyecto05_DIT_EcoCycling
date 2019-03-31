@@ -1,0 +1,26 @@
+.contenedor-registro {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 6% 7% 6% 7%;
+    margin-top: 2%;
+}
+
+.green-text {
+    color: #88c33d;
+}
+
+h1, .h1 {
+    font-size: 2em;
+}
+
+body {
+	height: 100%;
+	background-image: url("../img/bg_desenfocado.png");
+	background-size: cover; 
+}
+
+.alert-danger {
+    color: #ff283c;
+    background-color: transparent;
+    border-color: transparent;
+    text-align: center;
+}
