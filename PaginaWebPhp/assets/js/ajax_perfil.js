@@ -164,7 +164,7 @@ function ajax_modificarUsuario(){
 		},
 		cache: false,
 		success: function(response) {
-			alert( "Data Saved: " + msg );
+			//alert( "Data Saved: " + response );
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 			alert("Algo ha fallado: " + textStatus);

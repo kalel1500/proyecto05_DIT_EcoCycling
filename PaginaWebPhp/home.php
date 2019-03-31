@@ -8,11 +8,16 @@
 	$array = mysqli_fetch_array($consulta);
 	
 	/*query 2-------------------------------*/
-	$fecha = new DateTime();
-	$fecha->modify('last day of this month');
-	$ultimoDia = strtotime($fecha->format('Y-m-d H:i:s'));
-	$fecha->modify('first day of this month');
-	$primerDia = strtotime($fecha->format('Y-m-d H:i:s'));
+	$hoy = date("Y-m-d");
+
+	$fechaLast = new DateTime("$hoy 23:59:50");
+	$fechaLast->modify('last day of this month');
+	$ultimoDia = strtotime($fechaLast->format('Y-m-d H:i:s'));
+
+	$fechaFirst = new DateTime("$hoy 00:00:00");
+	$fechaFirst->modify('first day of this month');
+	$primerDia = strtotime($fechaFirst->format('Y-m-d H:i:s'));
+	
 	$sql2 ="SELECT SUM(`tbl_historial`.`historial_kilometros`) AS 'kilometros_mensuales' FROM `tbl_usuario` INNER JOIN `tbl_historial` ON `tbl_usuario`.`usuario_id` = `tbl_historial`.`usuario_id` WHERE `tbl_usuario`.`usuario_id` = $_SESSION[ecocycling_user_id] AND `tbl_historial`.`historial_fechaFin` >= $primerDia AND `tbl_historial`.`historial_fechaFin` <= $ultimoDia GROUP BY `tbl_usuario`.`usuario_id`";
 	$consulta2=mysqli_query($link, $sql2);
 	$array2 = mysqli_fetch_array($consulta2);
