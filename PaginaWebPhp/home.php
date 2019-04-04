@@ -88,7 +88,11 @@
 						
 						<div class="div-right-home">
 							<p>Siguiente nivel</p>
-							<?php echo "<img class='rotar' src=\"".$array3['nivel_fotoRuta'].$array3['nivel_fotoNombre'].$array3['nivel_fotoExtension']."\" style=\"width: 100px;\">"; ?>
+							<?php 
+							if ($array['nivel_numero'] != 8) {
+								echo "<img class='rotar' src=\"".$array3['nivel_fotoRuta'].$array3['nivel_fotoNombre'].$array3['nivel_fotoExtension']."\" style=\"width: 100px;\">"; 
+							}
+							?>
 							<?php echo "$msg"; ?>
 						</div>
 					</div>
@@ -99,7 +103,7 @@
 							<div class="form-group">
 								<label class="col-sm-4 control-label" for="inp_aumentar" id="label_aumentar">Aumentar en (km):</label>
 								<div class="col-sm-8">
-									<input class="form-control" type="number" id="inp_aumentar" name="inp_aumentar" required>
+									<input class="form-control" type="number" id="inp_aumentar" name="inp_aumentar" min="1" required>
 								</div>
 							</div>
 							<div class="form-group">
