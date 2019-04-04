@@ -44,7 +44,7 @@
 		<?php
 			include "assets/php/conexion.php";
 			if (!isset($_SESSION['ecocycling_user_id'])) {
-				header("Location: login.php");
+				header("Location: index.html");
 			}
 		?>
 
