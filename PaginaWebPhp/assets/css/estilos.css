@@ -46,6 +46,10 @@ h1 {
 	text-overflow: ellipsis;
 }
 
+.input-donaciones {
+	width: 42px;
+}
+
 /*---------------------------------------------------------------------------------------*/
 
 @media (max-width: 1000px) {

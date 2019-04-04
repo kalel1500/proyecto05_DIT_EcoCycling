@@ -45,7 +45,7 @@
 											<h3>Donar a <?=$row['entidad_nombre']?></h3>
 											<br><br><p><?=$row['entidad_descripcion']?></p><br>
 											<p>Cartera: <?=$points?> ECOPoints</p>
-											Donar: <input type="text" form="form-<?=$photo?>" name="donation" id="donation" size="4" <?php if (!($pay)) { echo "disabled"; } ?> /> ECOPoints
+											Donar: <input type="number" form="form-<?=$photo?>" name="donation" id="donation" class="input-donaciones" size="4" min="1" required <?php if (!($pay)) { echo "disabled"; } ?> /> ECOPoints
 											<br><br>
 											<?php if(isset($_REQUEST['msg_error']) && $_REQUEST['nom_org'] == $row['entidad_nombre'] ) {
 												echo "<span style='color: red;'>".$_REQUEST['msg_error']."</span>";
