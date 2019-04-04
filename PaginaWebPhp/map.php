@@ -1,6 +1,8 @@
 
 <?php include "assets/php/header.php" ?>
 
+
+
 <section>
 	<article class="container">
 		<div class="row">
@@ -42,11 +44,12 @@
 					geojson.forEach(function (marker,index) {
 						var popup = new mapboxgl.Popup({ offset: 25 })
 							.setText(saved_markers[1][index]);
-							// var el = document.createElement('div');
-							//   el.id = 'marker';
-							// console.log(marker);
+							var el = document.createElement('div');
+							  el.id = 'marker';
+							  el.style.backgroundImage = "url('bike.png')";
+							console.log(marker);
 							// make a marker for each feature and add to the map
-							new mapboxgl.Marker()
+							new mapboxgl.Marker(el)
 									.setLngLat(marker)
 									.setPopup(popup)
 									.addTo(map);
@@ -57,5 +60,6 @@
 		}
 	});
 </script>
+
 
 <?php include "assets/php/footer.php" ?>
