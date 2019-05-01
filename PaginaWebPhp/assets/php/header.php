@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -15,9 +15,10 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-
-
+		<!-- Rotar -->
 		<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+
+		
 
 		<!-- Estilos propios -->
 		<link href="assets/css/estilos.css" rel="stylesheet" type="text/css"/>
@@ -26,12 +27,18 @@
 		<link href="assets/css/perfil.css" rel="stylesheet" type="text/css" >
 		<link href="assets/css/home.css" rel="stylesheet" type="text/css" >
 		<link href="assets/css/rankingStyle.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/map.css" rel="stylesheet" type="text/css"/>
 
 		<!-- Js propios -->
 		<script type="text/javascript" src="assets/js/indexFunctions.js" ></script>
-		<!-- <script type="text/javascript" src="assets/js/perfil_display_inputs.js"></script> -->
 		<script type="text/javascript" src="assets/js/ajax_perfil.js"></script>
 		<script type="text/javascript" src="assets/js/aumentar.js"></script>
+
+		<!-- Mapas -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
 
 		<!-- conexion -->
 		<?php
@@ -69,7 +76,7 @@
 							<li class="<?php echo ($ruta['filename'] == "ranking") ? "active" : ""; ?>"><a href="ranking.php"><i class="fas fa-medal"></i> Ranking</a></li>
 							<li class="<?php echo ($ruta['filename'] == "donations") ? "active" : ""; ?>"><a href="donations.php"><i class="fas fa-hand-holding-usd"></i> Donaciones</a></li>
 							<li class="<?php echo ($ruta['filename'] == "map") ? "active" : ""; ?>"><a href="map.php"><i class="fas fa-bicycle"></i> Bicis</a></li>
-							<li class="<?php echo ($ruta['filename'] == "info") ? "active" : ""; ?>"><a href="info.php"><i class="fas fa-info"></i> Información</a></li>
+							<li class="<?php echo ($ruta['filename'] == "info") ? "active" : ""; ?>"><a href="info.php"><i class="fas fa-info"></i> <span class="hide-size-tablet">Información</span><span class="show-size-tablet">P&R</span></a></li>
 							<!-- <li class="<php echo ($ruta['filename'] == "consultas") ? "active" : ""; ?>"><a href="consultas.php"><i class="fas fa-info"></i> Con</a></li> -->
 
 						</ul>
