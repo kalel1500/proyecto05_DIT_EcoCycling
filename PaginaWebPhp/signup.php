@@ -32,12 +32,13 @@
 					}
 
 					if ($pass) {
-						$sql = "INSERT INTO `tbl_usuario` (`usuario_usuario`, `usuario_nombre`, `usuario_apellido`, `usuario_email`, `usuario_contrasena`, `usuario_ultimaConexion`, `usuario_ultimoReset`, `usuario_fondosTotales`, `usuario_fondosMensuales`, `grupo_id`, `nivel_id`, `foto_id`) VALUES (:usuario, NULL, NULL, :email, :password, NULL, NULL, 0, 0, (SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = 'Usuario'), (SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_numero` = 1), (SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = '1_foto01'))";
+						$sql = "INSERT INTO `tbl_usuario` (`usuario_usuario`, `usuario_nombre`, `usuario_apellido`, `usuario_email`, `usuario_contrasena`, `usuario_ultimaConexion`, `usuario_ultimoReset`, `usuario_fondosTotales`, `usuario_fondosMensuales`, `grupo_id`, `nivel_id`, `foto_id`) VALUES (:usuario, NULL, NULL, :email, :password, :current, NULL, 0, 0, (SELECT `grupo_id` FROM `tbl_grupo` WHERE `grupo_nombre` = 'Usuario'), (SELECT `nivel_id` FROM `tbl_nivel` WHERE `nivel_numero` = 1), (SELECT `foto_id` FROM `tbl_foto` WHERE `foto_nombre` = '1_foto01'))";
 						$stmt = $conn->prepare($sql);
 						$stmt->bindParam(':usuario', $_POST['username']);
 						$stmt->bindParam(':email', $_POST['email']);
 						$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 						$stmt->bindParam(':password', $password);
+						$stmt->bindParam(':current', time());
 						if ($stmt->execute()) {
 
 							/*-----------------------historial-------------------*/

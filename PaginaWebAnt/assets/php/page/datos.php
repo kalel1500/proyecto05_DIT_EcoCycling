@@ -7,6 +7,9 @@
 			$date = date('Y-m-d H:i:s',time());
 			echo "date de time: ".$date;
 		echo "<br>-------------------<br>";
+			$date = date('m',time());
+			echo "mes de time: ".$date;
+		echo "<br>-------------------<br>";
 			echo "time de date: ".strtotime($date);
 		echo "<br>-------------------<br>";
 
