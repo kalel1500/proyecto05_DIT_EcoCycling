@@ -279,19 +279,19 @@ UPDATE `tbl_usuario` SET `usuario_contrasena` = '$2y$10$BhHdy5dTii3ESp3tCLGazOJm
 
 
 INSERT INTO `tbl_bicicleta` (`bicicleta_modelo`, `bicicleta_posX`, `bicicleta_posY`) VALUES
-('Specialized Tarmac',	'0.00000',	'0.00000'),
-('Specialized Shiv',	'0.00000',	'0.00000'),
-('Specialized Venge ',	'0.00000',	'0.00000'),
-('Specialized Allez',	'0.00000',	'0.00000'),
-('Scott Foil',			'0.00000',	'0.00000'),
-('Scott Addict',		'0.00000',	'0.00000'),
-('Canyon Aeroad',		'0.00000',	'0.00000'),
-('Canyon Ultimate',		'0.00000',	'0.00000'),
-('Canyon Endurance',	'0.00000',	'0.00000'),
-('Supersix EVO',		'0.00000',	'0.00000'),
-('La Caad 12',			'0.00000',	'0.00000'),
-('Synapse',				'0.00000',	'0.00000'),
-('Orbea Avant',			'0.00000',	'0.00000');
+('Specialized Tarmac',	'2.185677',	'41.381876'),
+('Specialized Shiv',	'2.175456',	'41.376262'),
+('Specialized Venge ',	'2.178690',	'41.392567'),
+('Specialized Allez',	'2.133200',	'41.394592'),
+('Scott Foil',			'2.153201',	'41.409005'),
+('Scott Addict',		'2.134116',	'41.408432'),
+('Canyon Aeroad',		'2.074372',	'41.351594'),
+('Canyon Ultimate',		'2.123098',	'41.355205'),
+('Canyon Endurance',	'2.110986',	'41.350469'),
+('Supersix EVO',		'2.160824',	'41.363236'),
+('La Caad 12',			'2.147187',	'41.362569'),
+('Synapse',				'2.152079',	'41.391002'),
+('Orbea Avant',			'2.146380',	'41.378078');
 
 
 INSERT INTO `tbl_grupoentidad` (`grupoEntidad_nombre`, `grupoEntidad_descripcion`) VALUES

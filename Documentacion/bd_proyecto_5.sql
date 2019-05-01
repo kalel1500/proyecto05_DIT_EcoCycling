@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_bicicleta` (
-  `bicicleta_id` int(11) NOT NULL COMMENT 'pk_bicicleta',
-  `bicicleta_modelo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `bicicleta_posX` decimal(10,6) NOT NULL,
-  `bicicleta_posY` decimal(10,6) NOT NULL
+	`bicicleta_id` int(11) NOT NULL COMMENT 'pk_bicicleta',
+	`bicicleta_modelo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`bicicleta_posX` decimal(10,6) NOT NULL,
+	`bicicleta_posY` decimal(10,6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -40,19 +40,19 @@ CREATE TABLE `tbl_bicicleta` (
 --
 
 INSERT INTO `tbl_bicicleta` (`bicicleta_id`, `bicicleta_modelo`, `bicicleta_posX`, `bicicleta_posY`) VALUES
-(1, 'Specialized Tarmac', '2.185677', '41.381876'),
-(2, 'Specialized Shiv', '2.175456', '41.376262'),
-(3, 'Specialized Venge ', '2.178690', '41.392567'),
-(4, 'Specialized Allez', '2.133200', '41.394592'),
-(5, 'Scott Foil', '2.153201', '41.409005'),
-(6, 'Scott Addict', '2.134116', '41.408432'),
-(7, 'Canyon Aeroad', '2.074372', '41.351594'),
-(8, 'Canyon Ultimate', '2.123098', '41.355205'),
-(9, 'Canyon Endurance', '2.110986', '41.350469'),
-(10, 'Supersix EVO', '2.160824', '41.363236'),
-(11, 'La Caad 12', '2.147187', '41.362569'),
-(12, 'Synapse', '2.152079', '41.391002'),
-(13, 'Orbea Avant', '2.146380', '41.378078');
+(1, 'Specialized Tarmac',	'2.185677', '41.381876'),
+(2, 'Specialized Shiv',		'2.175456', '41.376262'),
+(3, 'Specialized Venge ',	'2.178690', '41.392567'),
+(4, 'Specialized Allez',	'2.133200', '41.394592'),
+(5, 'Scott Foil',			'2.153201', '41.409005'),
+(6, 'Scott Addict',			'2.134116', '41.408432'),
+(7, 'Canyon Aeroad',		'2.074372', '41.351594'),
+(8, 'Canyon Ultimate',		'2.123098', '41.355205'),
+(9, 'Canyon Endurance',		'2.110986', '41.350469'),
+(10, 'Supersix EVO',		'2.160824', '41.363236'),
+(11, 'La Caad 12',			'2.147187', '41.362569'),
+(12, 'Synapse',				'2.152079', '41.391002'),
+(13, 'Orbea Avant',			'2.146380', '41.378078');
 
 -- --------------------------------------------------------
 
@@ -61,13 +61,13 @@ INSERT INTO `tbl_bicicleta` (`bicicleta_id`, `bicicleta_modelo`, `bicicleta_posX
 --
 
 CREATE TABLE `tbl_entidad` (
-  `entidad_id` int(11) NOT NULL COMMENT 'pk_entidad',
-  `entidad_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `entidad_descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `entidad_dineroMeta` decimal(5,2) DEFAULT NULL,
-  `entidad_dineroActual` decimal(5,2) DEFAULT NULL,
-  `grupoEntidad_id` int(11) DEFAULT NULL COMMENT 'fk_grupoEntidad',
-  `entidad_url` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL
+	`entidad_id` int(11) NOT NULL COMMENT 'pk_entidad',
+	`entidad_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`entidad_descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`entidad_dineroMeta` decimal(5,2) DEFAULT NULL,
+	`entidad_dineroActual` decimal(5,2) DEFAULT NULL,
+	`grupoEntidad_id` int(11) DEFAULT NULL COMMENT 'fk_grupoEntidad',
+	`entidad_url` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -88,11 +88,11 @@ INSERT INTO `tbl_entidad` (`entidad_id`, `entidad_nombre`, `entidad_descripcion`
 --
 
 CREATE TABLE `tbl_foto` (
-  `foto_id` int(11) NOT NULL COMMENT 'pk_foto',
-  `foto_ruta` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `foto_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `foto_extension` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `nivel_id` int(11) DEFAULT NULL COMMENT 'fk_nivel'
+	`foto_id` int(11) NOT NULL COMMENT 'pk_foto',
+	`foto_ruta` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`foto_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`foto_extension` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`nivel_id` int(11) DEFAULT NULL COMMENT 'fk_nivel'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -135,8 +135,8 @@ INSERT INTO `tbl_foto` (`foto_id`, `foto_ruta`, `foto_nombre`, `foto_extension`,
 --
 
 CREATE TABLE `tbl_grupo` (
-  `grupo_id` int(11) NOT NULL COMMENT 'pk_grupo',
-  `grupo_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+	`grupo_id` int(11) NOT NULL COMMENT 'pk_grupo',
+	`grupo_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -155,9 +155,9 @@ INSERT INTO `tbl_grupo` (`grupo_id`, `grupo_nombre`) VALUES
 --
 
 CREATE TABLE `tbl_grupoentidad` (
-  `grupoEntidad_id` int(11) NOT NULL COMMENT 'pk_grupoEntidad',
-  `grupoEntidad_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `grupoEntidad_descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+	`grupoEntidad_id` int(11) NOT NULL COMMENT 'pk_grupoEntidad',
+	`grupoEntidad_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`grupoEntidad_descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -175,12 +175,12 @@ INSERT INTO `tbl_grupoentidad` (`grupoEntidad_id`, `grupoEntidad_nombre`, `grupo
 --
 
 CREATE TABLE `tbl_historial` (
-  `historial_id` int(11) NOT NULL COMMENT 'pk_historial',
-  `historial_fechaInicio` decimal(11,1) NOT NULL,
-  `historial_fechaFin` decimal(11,1) NOT NULL,
-  `historial_kilometros` decimal(9,3) NOT NULL,
-  `usuario_id` int(11) DEFAULT NULL COMMENT 'fk_usuario',
-  `bicicleta_id` int(11) DEFAULT NULL COMMENT 'fk_bicicleta'
+	`historial_id` int(11) NOT NULL COMMENT 'pk_historial',
+	`historial_fechaInicio` decimal(11,1) NOT NULL,
+	`historial_fechaFin` decimal(11,1) NOT NULL,
+	`historial_kilometros` decimal(9,3) NOT NULL,
+	`usuario_id` int(11) DEFAULT NULL COMMENT 'fk_usuario',
+	`bicicleta_id` int(11) DEFAULT NULL COMMENT 'fk_bicicleta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -226,13 +226,13 @@ INSERT INTO `tbl_historial` (`historial_id`, `historial_fechaInicio`, `historial
 --
 
 CREATE TABLE `tbl_nivel` (
-  `nivel_id` int(11) NOT NULL COMMENT 'pk_nivel',
-  `nivel_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `nivel_numero` int(11) NOT NULL,
-  `nivel_kilometros` decimal(9,3) NOT NULL,
-  `nivel_fotoRuta` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nivel_fotoNombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nivel_fotoExtension` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+	`nivel_id` int(11) NOT NULL COMMENT 'pk_nivel',
+	`nivel_nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`nivel_numero` int(11) NOT NULL,
+	`nivel_kilometros` decimal(9,3) NOT NULL,
+	`nivel_fotoRuta` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`nivel_fotoNombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`nivel_fotoExtension` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -257,10 +257,10 @@ INSERT INTO `tbl_nivel` (`nivel_id`, `nivel_nombre`, `nivel_numero`, `nivel_kilo
 --
 
 CREATE TABLE `tbl_pago` (
-  `pago_id` int(11) NOT NULL COMMENT 'pk_pago',
-  `pago_cantidad` decimal(5,2) NOT NULL,
-  `usuario_id` int(11) NOT NULL COMMENT 'fk_usuario',
-  `entidad_id` int(11) NOT NULL COMMENT 'fk_entidad'
+	`pago_id` int(11) NOT NULL COMMENT 'pk_pago',
+	`pago_cantidad` decimal(5,2) NOT NULL,
+	`usuario_id` int(11) NOT NULL COMMENT 'fk_usuario',
+	`entidad_id` int(11) NOT NULL COMMENT 'fk_entidad'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -292,20 +292,20 @@ INSERT INTO `tbl_pago` (`pago_id`, `pago_cantidad`, `usuario_id`, `entidad_id`) 
 --
 
 CREATE TABLE `tbl_usuario` (
-  `usuario_id` int(11) NOT NULL COMMENT 'pk_usuario',
-  `usuario_usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `usuario_nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `usuario_apellido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `usuario_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `usuario_contrasena` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `usuario_sexo` enum('Hombre','Mujer','Otros') COLLATE utf8_unicode_ci DEFAULT NULL,
-  `usuario_ultimaConexion` decimal(11,1) DEFAULT NULL,
-  `usuario_ultimoReset` decimal(11,1) DEFAULT NULL,
-  `usuario_fondosMensuales` decimal(5,2) DEFAULT NULL,
-  `usuario_fondosTotales` decimal(5,2) DEFAULT NULL,
-  `grupo_id` int(11) DEFAULT NULL COMMENT 'fk_grupo',
-  `nivel_id` int(11) DEFAULT NULL COMMENT 'fk_nivel',
-  `foto_id` int(11) DEFAULT NULL COMMENT 'fk_foto'
+	`usuario_id` int(11) NOT NULL COMMENT 'pk_usuario',
+	`usuario_usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`usuario_nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`usuario_apellido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`usuario_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	`usuario_contrasena` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+	`usuario_sexo` enum('Hombre','Mujer','Otros') COLLATE utf8_unicode_ci DEFAULT NULL,
+	`usuario_ultimaConexion` decimal(11,1) DEFAULT NULL,
+	`usuario_ultimoReset` decimal(11,1) DEFAULT NULL,
+	`usuario_fondosMensuales` decimal(5,2) DEFAULT NULL,
+	`usuario_fondosTotales` decimal(5,2) DEFAULT NULL,
+	`grupo_id` int(11) DEFAULT NULL COMMENT 'fk_grupo',
+	`nivel_id` int(11) DEFAULT NULL COMMENT 'fk_nivel',
+	`foto_id` int(11) DEFAULT NULL COMMENT 'fk_foto'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -341,66 +341,66 @@ INSERT INTO `tbl_usuario` (`usuario_id`, `usuario_usuario`, `usuario_nombre`, `u
 -- Indices de la tabla `tbl_bicicleta`
 --
 ALTER TABLE `tbl_bicicleta`
-  ADD PRIMARY KEY (`bicicleta_id`);
+	ADD PRIMARY KEY (`bicicleta_id`);
 
 --
 -- Indices de la tabla `tbl_entidad`
 --
 ALTER TABLE `tbl_entidad`
-  ADD PRIMARY KEY (`entidad_id`),
-  ADD KEY `FK_entidad_grupoEntidad` (`grupoEntidad_id`);
+	ADD PRIMARY KEY (`entidad_id`),
+	ADD KEY `FK_entidad_grupoEntidad` (`grupoEntidad_id`);
 
 --
 -- Indices de la tabla `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
-  ADD PRIMARY KEY (`foto_id`),
-  ADD KEY `FK_foto_nivel` (`nivel_id`);
+	ADD PRIMARY KEY (`foto_id`),
+	ADD KEY `FK_foto_nivel` (`nivel_id`);
 
 --
 -- Indices de la tabla `tbl_grupo`
 --
 ALTER TABLE `tbl_grupo`
-  ADD PRIMARY KEY (`grupo_id`);
+	ADD PRIMARY KEY (`grupo_id`);
 
 --
 -- Indices de la tabla `tbl_grupoentidad`
 --
 ALTER TABLE `tbl_grupoentidad`
-  ADD PRIMARY KEY (`grupoEntidad_id`);
+	ADD PRIMARY KEY (`grupoEntidad_id`);
 
 --
 -- Indices de la tabla `tbl_historial`
 --
 ALTER TABLE `tbl_historial`
-  ADD PRIMARY KEY (`historial_id`),
-  ADD KEY `FK_historial_usuario` (`usuario_id`),
-  ADD KEY `FK_historial_bicicleta` (`bicicleta_id`);
+	ADD PRIMARY KEY (`historial_id`),
+	ADD KEY `FK_historial_usuario` (`usuario_id`),
+	ADD KEY `FK_historial_bicicleta` (`bicicleta_id`);
 
 --
 -- Indices de la tabla `tbl_nivel`
 --
 ALTER TABLE `tbl_nivel`
-  ADD PRIMARY KEY (`nivel_id`);
+	ADD PRIMARY KEY (`nivel_id`);
 
 --
 -- Indices de la tabla `tbl_pago`
 --
 ALTER TABLE `tbl_pago`
-  ADD PRIMARY KEY (`pago_id`),
-  ADD KEY `FK_pago_usuario` (`usuario_id`),
-  ADD KEY `FK_pago_entidad` (`entidad_id`);
+	ADD PRIMARY KEY (`pago_id`),
+	ADD KEY `FK_pago_usuario` (`usuario_id`),
+	ADD KEY `FK_pago_entidad` (`entidad_id`);
 
 --
 -- Indices de la tabla `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  ADD PRIMARY KEY (`usuario_id`),
-  ADD UNIQUE KEY `uk_usuario_usuario` (`usuario_usuario`),
-  ADD UNIQUE KEY `uk_usuario_email` (`usuario_email`),
-  ADD KEY `FK_usuario_grupo` (`grupo_id`),
-  ADD KEY `FK_usuario_nivel` (`nivel_id`),
-  ADD KEY `FK_usuario_foto` (`foto_id`);
+	ADD PRIMARY KEY (`usuario_id`),
+	ADD UNIQUE KEY `uk_usuario_usuario` (`usuario_usuario`),
+	ADD UNIQUE KEY `uk_usuario_email` (`usuario_email`),
+	ADD KEY `FK_usuario_grupo` (`grupo_id`),
+	ADD KEY `FK_usuario_nivel` (`nivel_id`),
+	ADD KEY `FK_usuario_foto` (`foto_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -410,55 +410,55 @@ ALTER TABLE `tbl_usuario`
 -- AUTO_INCREMENT de la tabla `tbl_bicicleta`
 --
 ALTER TABLE `tbl_bicicleta`
-  MODIFY `bicicleta_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_bicicleta', AUTO_INCREMENT=14;
+	MODIFY `bicicleta_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_bicicleta', AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_entidad`
 --
 ALTER TABLE `tbl_entidad`
-  MODIFY `entidad_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_entidad', AUTO_INCREMENT=6;
+	MODIFY `entidad_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_entidad', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
-  MODIFY `foto_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_foto', AUTO_INCREMENT=28;
+	MODIFY `foto_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_foto', AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_grupo`
 --
 ALTER TABLE `tbl_grupo`
-  MODIFY `grupo_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_grupo', AUTO_INCREMENT=4;
+	MODIFY `grupo_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_grupo', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_grupoentidad`
 --
 ALTER TABLE `tbl_grupoentidad`
-  MODIFY `grupoEntidad_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_grupoEntidad', AUTO_INCREMENT=3;
+	MODIFY `grupoEntidad_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_grupoEntidad', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_historial`
 --
 ALTER TABLE `tbl_historial`
-  MODIFY `historial_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_historial', AUTO_INCREMENT=31;
+	MODIFY `historial_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_historial', AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_nivel`
 --
 ALTER TABLE `tbl_nivel`
-  MODIFY `nivel_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_nivel', AUTO_INCREMENT=10;
+	MODIFY `nivel_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_nivel', AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_pago`
 --
 ALTER TABLE `tbl_pago`
-  MODIFY `pago_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_pago', AUTO_INCREMENT=17;
+	MODIFY `pago_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_pago', AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_usuario', AUTO_INCREMENT=20;
+	MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'pk_usuario', AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas
@@ -468,35 +468,35 @@ ALTER TABLE `tbl_usuario`
 -- Filtros para la tabla `tbl_entidad`
 --
 ALTER TABLE `tbl_entidad`
-  ADD CONSTRAINT `FK_entidad_grupoEntidad` FOREIGN KEY (`grupoEntidad_id`) REFERENCES `tbl_grupoentidad` (`grupoEntidad_id`);
+	ADD CONSTRAINT `FK_entidad_grupoEntidad` FOREIGN KEY (`grupoEntidad_id`) REFERENCES `tbl_grupoentidad` (`grupoEntidad_id`);
 
 --
 -- Filtros para la tabla `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
-  ADD CONSTRAINT `FK_foto_nivel` FOREIGN KEY (`nivel_id`) REFERENCES `tbl_nivel` (`nivel_id`);
+	ADD CONSTRAINT `FK_foto_nivel` FOREIGN KEY (`nivel_id`) REFERENCES `tbl_nivel` (`nivel_id`);
 
 --
 -- Filtros para la tabla `tbl_historial`
 --
 ALTER TABLE `tbl_historial`
-  ADD CONSTRAINT `FK_historial_bicicleta` FOREIGN KEY (`bicicleta_id`) REFERENCES `tbl_bicicleta` (`bicicleta_id`),
-  ADD CONSTRAINT `FK_historial_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `tbl_usuario` (`usuario_id`);
+	ADD CONSTRAINT `FK_historial_bicicleta` FOREIGN KEY (`bicicleta_id`) REFERENCES `tbl_bicicleta` (`bicicleta_id`),
+	ADD CONSTRAINT `FK_historial_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `tbl_usuario` (`usuario_id`);
 
 --
 -- Filtros para la tabla `tbl_pago`
 --
 ALTER TABLE `tbl_pago`
-  ADD CONSTRAINT `FK_pago_entidad` FOREIGN KEY (`entidad_id`) REFERENCES `tbl_entidad` (`entidad_id`),
-  ADD CONSTRAINT `FK_pago_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `tbl_usuario` (`usuario_id`);
+	ADD CONSTRAINT `FK_pago_entidad` FOREIGN KEY (`entidad_id`) REFERENCES `tbl_entidad` (`entidad_id`),
+	ADD CONSTRAINT `FK_pago_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `tbl_usuario` (`usuario_id`);
 
 --
 -- Filtros para la tabla `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  ADD CONSTRAINT `FK_usuario_foto` FOREIGN KEY (`foto_id`) REFERENCES `tbl_foto` (`foto_id`),
-  ADD CONSTRAINT `FK_usuario_grupo` FOREIGN KEY (`grupo_id`) REFERENCES `tbl_grupo` (`grupo_id`),
-  ADD CONSTRAINT `FK_usuario_nivel` FOREIGN KEY (`nivel_id`) REFERENCES `tbl_nivel` (`nivel_id`);
+	ADD CONSTRAINT `FK_usuario_foto` FOREIGN KEY (`foto_id`) REFERENCES `tbl_foto` (`foto_id`),
+	ADD CONSTRAINT `FK_usuario_grupo` FOREIGN KEY (`grupo_id`) REFERENCES `tbl_grupo` (`grupo_id`),
+	ADD CONSTRAINT `FK_usuario_nivel` FOREIGN KEY (`nivel_id`) REFERENCES `tbl_nivel` (`nivel_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
